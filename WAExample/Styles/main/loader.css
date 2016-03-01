@@ -1,0 +1,47 @@
+/*
+687474703a2f2f7777772e386d6167732e636f6d2f6c6573736f6e732f63
+73732f616e696d617465646c6f616465722e7068700a
+*/
+.Loader.facebook{
+	animation: 1.5s linear 0s normal none infinite running audioWave;
+	background-attachment: scroll, scroll, scroll, scroll, scroll;
+	background-clip: border-box, border-box, border-box, border-box, border-box;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: linear-gradient(#F59996, #F69696), linear-gradient(#F67676, #F67676), linear-gradient(#FB5956, #FB5956), linear-gradient(#F67676, #F67676), linear-gradient(#F59996, #F59996);
+	background-origin: padding-box, padding-box, padding-box, padding-box, padding-box;
+	background-position: 0 50%, 0.625em 50%, 1.25em 50%, 1.875em 50%, 2.5em 50%;
+	background-repeat: no-repeat;
+	background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+	height: 2em;
+	width: 3em;
+}
+.Loader.facebook {
+	background-size:auto;
+    background-image: url('../../Resources/Images/public/ajax-loader-facebook.gif');
+	width:auto;
+	height:auto;
+}
+@keyframes audioWave {
+    25% {
+        background-size: 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+    }
+    37.5% {
+        background-size: 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+    }
+    50% {
+        background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em;
+    }
+    62.5% {
+        background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em;
+    }
+    75% {
+        background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em;
+    }
+}
+.Loader{
+	margin:auto;
+	position:fixed;
+	top:calc(50%);
+	left:calc(50%);
+	transition:all 0.35s linear 0s;
+}

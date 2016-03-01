@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WAExample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DownloadPageURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WSPublic/download.aspx</Value>
+    </Setting>
+    <Setting Name="ResourceDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Resources/Installations/</Value>
+    </Setting>
+    <Setting Name="GetSessionURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost/example/sessions.aspx</Value>
+    </Setting>
+    <Setting Name="LoginPageURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost/example/login.aspx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

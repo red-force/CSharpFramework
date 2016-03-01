@@ -1,0 +1,40 @@
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Release\ResolveAssemblyReference.cache
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.pdb
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.pdb
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.xml
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Release\Newtonsoft.RF.Json.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Release\Newtonsoft.RF.Json.pdb
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Release\Newtonsoft.RF.Json.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\Newtonsoft.Json.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\EPPlus.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\Newtonsoft.Json.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\NPOI.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\EPPlus.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\Newtonsoft.Json.pdb
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\NPOI.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\WZTC.csproj.GenerateResource.Cache
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.pdb
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll.config
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.pdb
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\HQ.ResourceImage.resources
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\WZTC.csprojResolveAssemblyReference.cache
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll.config
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.pdb
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\HQ.ResourceImage.resources
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\WZTC.csproj.GenerateResource.Cache
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.dll
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.pdb
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.xml
+C:\vsworkspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll.config
+C:\vsworkspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll
+C:\vsworkspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\HQ.ResourceImage.resources
+C:\vsworkspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\WZTC.csproj.GenerateResource.Cache
+C:\vsworkspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Release\System.Web.RF.dll
+C:\vsworkspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Release\System.Web.RF.xml

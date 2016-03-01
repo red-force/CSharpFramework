@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="CARFSecurerWinFormApp.exe" version="1.0.0.3" publicKeyToken="b502f4ae45b8e358" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="CARFSecurerWinFormApp" version="87.69.15.25" language="neutral" processorArchitecture="x86" />
+    <commandLine file="CARFSecurerWinFormApp.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Data.SqlServerCe" version="4.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CARFSecurer.exe" size="8704">
+      <assemblyIdentity name="CARFSecurer" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>jHsxdGJQl/LfM7AdUevz12nZUA4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CARFSecurerWinFormApp.exe" size="11264">
+      <assemblyIdentity name="CARFSecurerWinFormApp" version="87.69.15.25" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>EWZVMqFIPskz7Gkaz24aO9BW3QA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.dll" size="1108480">
+      <assemblyIdentity name="EPPlus" version="4.0.3.0" publicKeyToken="EA159FDAA78159A1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>YXVPwMGE26q5m4K+S/wtsjC8B14=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NPOI.dll" size="1606144">
+      <assemblyIdentity name="NPOI" version="2.1.3.1" publicKeyToken="0DF73EC7942B34E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>qrTeQAE6558T1HQPyIBwxkM9B0I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Web.RF.dll" size="86016">
+      <assemblyIdentity name="System.Web.RF" version="87.69.15.624" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>uadB/3DkwyN2HYiSqs2n5G/2Uto=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=NOTZSTORE\Admin" issuerKeyHash="303b8e6b5555c1133805305a7af8dec02a8b0d70" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>c0qmNK9RRkuqxaUKYLVKG+A5n3o=</DigestValue></Reference></SignedInfo><SignatureValue>b5bPIHgoUnxCr1YPXG3H3z6+/WPt3+TCZcKg7K/SNIfPyxCp8bLkUBVeAk59EVsxz3fADHpv5tp5xKbWt3teHoJ+icxQrMQ42eb9VWaaNqm/Uel/feW8OwZ4A5vp92j6ISUFPEyytY0c8JS+XbTlsbJH2ADYYed01moxtSK7Lmk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>z8ZTwM4x7zComTMHIIeaJzNC1N5xuWhM3+ePBgzgpXA1B49qG5GwfuYt3kiCToPbBywlVaI3GxKOMElA+txho+UJAqTIff0YNOH0e+8eDcpP7EDK/0KBhSPE1UTYK4lri8pdViLK3n4Le80ffR0MwxdVaYYvvrZS5n9kn9egOEc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7a9f39e01b4ab5600aa5c5aa4b4651af34a64a73" Description="" Url=""><as:assemblyIdentity name="CARFSecurerWinFormApp.exe" version="1.0.0.3" publicKeyToken="b502f4ae45b8e358" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=NOTZSTORE\Admin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>EVopGzQlkjlNnMDLEnUW9UIepT8=</DigestValue></Reference></SignedInfo><SignatureValue>M0mr1xUrO/MvkDiG6qtoAEexEmx62I7mx409wiwgskkyWLmxwzIorj5nsBRQduNGjKX9TKSvpC4/mKceDztncrkkiaLq//lH5XyjzR03chzHTVp6SIfFKFbQ3a4CMXHHRbQXdaxMe8n59iKPSQmRsPhwePs5jJ8h4TQAI52n/O4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>z8ZTwM4x7zComTMHIIeaJzNC1N5xuWhM3+ePBgzgpXA1B49qG5GwfuYt3kiCToPbBywlVaI3GxKOMElA+txho+UJAqTIff0YNOH0e+8eDcpP7EDK/0KBhSPE1UTYK4lri8pdViLK3n4Le80ffR0MwxdVaYYvvrZS5n9kn9egOEc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQeWdUib88MoBHW7a03jxKXTANBgkqhkiG9w0BAQUFADApMScwJQYDVQQDHh4ATgBPAFQAWgBTAFQATwBSAEUAXABBAGQAbQBpAG4wHhcNMTUwNjI0MDkxMjQ2WhcNMTYwNjIzMTUxMjQ2WjApMScwJQYDVQQDHh4ATgBPAFQAWgBTAFQATwBSAEUAXABBAGQAbQBpAG4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAM/GU8DOMe8wqJkzByCHmiczQtTecbloTN/njwYM4KVwNQePahuRsH7mLd5Igk6D2wcsJVWiNxsSjjBJQPrcYaPlCQKkyH39GDTh9HvvHg3KT+xAyv9CgYUjxNVE2CuJa4vKXVYiyt5+C3vNH30dDMMXVWmGL762UuZ/ZJ/XoDhHAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAUGx9/0v9mo33Jmtz8MKYuJE00OPpPerhBRe4Z2WZ7uRnO8VPrEFyIaE3r7FHZr8KLLmFh13Ka8MmUStMQzCGw8ZYbEALNca7nNPyg7scNLKo0mIqvQ8AiRNu0GzI1fGUp9pBbzhjHCrCtOXr3KWyZrtag/LPFg6l46lBib/JCwY=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

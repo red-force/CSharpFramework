@@ -1,0 +1,12 @@
+    .doprintnone{
+	display:none !important;
+    }
+    .doprintblock{
+	display:block !important;
+    }
+    .doprintinline{
+	display:inline !important;
+    }
+    .doprintinlineblock{
+	display:inline-block !important;
+    }

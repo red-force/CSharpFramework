@@ -1,0 +1,5 @@
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Debug\ResolveAssemblyReference.cache
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Debug\WZToolsClass.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Debug\WZToolsClass.pdb
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Debug\WZToolsClass.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Debug\WZToolsClass.pdb

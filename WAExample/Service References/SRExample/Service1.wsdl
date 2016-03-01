@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExampleData1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExampleData1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExampleData1Result" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultMsg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RetCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RetMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Obj" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExampleData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExampleDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExampleDataResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExampleType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExampleTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExampleTypeResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExampleItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExampleItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExampleItemResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPowerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPowerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPowerInfoResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPowerInfo3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPowerInfo3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPowerInfo3Result" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExampleID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExampleIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExampleIDResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIEVersionCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rowCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIEVersionCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIEVersionCountResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOldIEInfoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="versionLevelFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="versionLevelTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rowCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOldIEInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOldIEInfoListResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIEVersionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="versionLevelFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="versionLevelTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rowCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIEVersionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIEVersionListResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForIE8Downloading">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supposedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForIE8DownloadingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrepareForIE8DownloadingResult" type="tns:ResultMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExampleData1SoapIn">
+    <wsdl:part name="parameters" element="tns:ExampleData1" />
+  </wsdl:message>
+  <wsdl:message name="ExampleData1SoapOut">
+    <wsdl:part name="parameters" element="tns:ExampleData1Response" />
+  </wsdl:message>
+  <wsdl:message name="ExampleDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ExampleData" />
+  </wsdl:message>
+  <wsdl:message name="ExampleDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ExampleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExampleTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExampleType" />
+  </wsdl:message>
+  <wsdl:message name="GetExampleTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExampleTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExampleItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExampleItem" />
+  </wsdl:message>
+  <wsdl:message name="GetExampleItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExampleItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPowerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPowerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPowerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPowerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPowerInfo3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetPowerInfo3" />
+  </wsdl:message>
+  <wsdl:message name="GetPowerInfo3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetPowerInfo3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetExampleIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExampleID" />
+  </wsdl:message>
+  <wsdl:message name="GetExampleIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExampleIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIEVersionCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIEVersionCount" />
+  </wsdl:message>
+  <wsdl:message name="GetIEVersionCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIEVersionCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOldIEInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOldIEInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetOldIEInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOldIEInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIEVersionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIEVersionList" />
+  </wsdl:message>
+  <wsdl:message name="GetIEVersionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIEVersionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForIE8DownloadingSoapIn">
+    <wsdl:part name="parameters" element="tns:PrepareForIE8Downloading" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForIE8DownloadingSoapOut">
+    <wsdl:part name="parameters" element="tns:PrepareForIE8DownloadingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExampleData1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ExampleData1</wsdl:documentation>
+      <wsdl:input message="tns:ExampleData1SoapIn" />
+      <wsdl:output message="tns:ExampleData1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExampleData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ExampleData</wsdl:documentation>
+      <wsdl:input message="tns:ExampleDataSoapIn" />
+      <wsdl:output message="tns:ExampleDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetExampleType.</wsdl:documentation>
+      <wsdl:input message="tns:GetExampleTypeSoapIn" />
+      <wsdl:output message="tns:GetExampleTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetExampleItem.</wsdl:documentation>
+      <wsdl:input message="tns:GetExampleItemSoapIn" />
+      <wsdl:output message="tns:GetExampleItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetPowerInfo</wsdl:documentation>
+      <wsdl:input message="tns:GetPowerInfoSoapIn" />
+      <wsdl:output message="tns:GetPowerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerInfo3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetPowerInfo3</wsdl:documentation>
+      <wsdl:input message="tns:GetPowerInfo3SoapIn" />
+      <wsdl:output message="tns:GetPowerInfo3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetPowerInfo3</wsdl:documentation>
+      <wsdl:input message="tns:GetExampleIDSoapIn" />
+      <wsdl:output message="tns:GetExampleIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIEVersionCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetIEVersionCount.</wsdl:documentation>
+      <wsdl:input message="tns:GetIEVersionCountSoapIn" />
+      <wsdl:output message="tns:GetIEVersionCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOldIEInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOldIEInfoList.</wsdl:documentation>
+      <wsdl:input message="tns:GetOldIEInfoListSoapIn" />
+      <wsdl:output message="tns:GetOldIEInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIEVersionList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetIEVersionList.</wsdl:documentation>
+      <wsdl:input message="tns:GetIEVersionListSoapIn" />
+      <wsdl:output message="tns:GetIEVersionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForIE8Downloading">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PrepareForIE8Downloading.</wsdl:documentation>
+      <wsdl:input message="tns:PrepareForIE8DownloadingSoapIn" />
+      <wsdl:output message="tns:PrepareForIE8DownloadingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExampleData1">
+      <soap:operation soapAction="http://tempuri.org/ExampleData1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExampleData">
+      <soap:operation soapAction="http://tempuri.org/ExampleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleType">
+      <soap:operation soapAction="http://tempuri.org/GetExampleType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleItem">
+      <soap:operation soapAction="http://tempuri.org/GetExampleItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPowerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerInfo3">
+      <soap:operation soapAction="http://tempuri.org/GetPowerInfo3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleID">
+      <soap:operation soapAction="http://tempuri.org/GetExampleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEVersionCount">
+      <soap:operation soapAction="http://tempuri.org/GetIEVersionCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOldIEInfoList">
+      <soap:operation soapAction="http://tempuri.org/GetOldIEInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEVersionList">
+      <soap:operation soapAction="http://tempuri.org/GetIEVersionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForIE8Downloading">
+      <soap:operation soapAction="http://tempuri.org/PrepareForIE8Downloading" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExampleData1">
+      <soap12:operation soapAction="http://tempuri.org/ExampleData1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExampleData">
+      <soap12:operation soapAction="http://tempuri.org/ExampleData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleType">
+      <soap12:operation soapAction="http://tempuri.org/GetExampleType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleItem">
+      <soap12:operation soapAction="http://tempuri.org/GetExampleItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetPowerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPowerInfo3">
+      <soap12:operation soapAction="http://tempuri.org/GetPowerInfo3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExampleID">
+      <soap12:operation soapAction="http://tempuri.org/GetExampleID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEVersionCount">
+      <soap12:operation soapAction="http://tempuri.org/GetIEVersionCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOldIEInfoList">
+      <soap12:operation soapAction="http://tempuri.org/GetOldIEInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEVersionList">
+      <soap12:operation soapAction="http://tempuri.org/GetIEVersionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForIE8Downloading">
+      <soap12:operation soapAction="http://tempuri.org/PrepareForIE8Downloading" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:3821/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:3821/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

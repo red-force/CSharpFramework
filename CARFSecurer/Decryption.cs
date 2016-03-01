@@ -1,0 +1,243 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
+
+namespace CARFSecurer
+{
+    class Decryption
+    {
+        #region decrypt securerEncryption16_3_a description
+        public static string securerDecryption16_3_a(string text)
+        {/*
+		            efbbbf20202020202020202020202020202020202a203020312032203320
+		            34203520362037203820392041204220432044204520460d0a2020202020
+		            2020202020202020202020202a2061206220632064206520662067206820
+		            69206a206b206c206d0d0a20202020202020202020202020202020202a20
+		            6e206f2070207120722073207420752076207720782079207a0d0a
+                 * */
+            String result = String.Empty;
+            result = String.Join("", text.Select(delegate(char c, int idx)
+            {
+                char _r = ' ';
+
+                #region Dictionary<char, char>
+                Dictionary<char, char> _dcc = new Dictionary<char, char>(){
+                        {'A','0'},
+                        {'B','1'},
+                        {'C','2'},
+                        {'D','3'},
+                        {'E','4'},
+                        {'F','5'},
+                        {'G','6'},
+                        {'H','7'},
+                        {'I','8'},
+                        {'J','9'},
+                        {'N','a'},
+                        {'O','b'},
+                        {'P','c'},
+                        {'Q','d'},
+                        {'R','e'},
+                        {'S','f'},
+                        {'T','g'},
+                        {'U','h'},
+                        {'V','i'},
+                        {'W','j'},
+                        {'X','k'},
+                        {'Y','l'},
+                        {'Z','m'},
+                        {')','n'},
+                        {'!','o'},
+                        {'@','p'},
+                        {'#','q'},
+                        {'$','r'},
+                        {'%','s'},
+                        {'^','t'},
+                        {'&','u'},
+                        {'*','v'},
+                        {'(','w'},
+                        {'K','x'},
+                        {'L','y'},
+                        {'M','z'},
+                        {'0','A'},
+                        {'1','B'},
+                        {'2','C'},
+                        {'3','D'},
+                        {'4','E'},
+                        {'5','F'},
+                        {'6','G'},
+                        {'7','H'},
+                        {'8','I'},
+                        {'9','J'},
+                        {'x','K'},
+                        {'y','L'},
+                        {'z','M'},
+                        {'a','N'},
+                        {'b','O'},
+                        {'c','P'},
+                        {'d','Q'},
+                        {'e','R'},
+                        {'f','S'},
+                        {'g','T'},
+                        {'h','U'},
+                        {'i','V'},
+                        {'j','W'},
+                        {'k','X'},
+                        {'l','Y'},
+                        {'m','Z'},
+                        {'n',')'},
+                        {'o','!'},
+                        {'p','@'},
+                        {'q','#'},
+                        {'r','$'},
+                        {'s','%'},
+                        {'t','^'},
+                        {'u','&'},
+                        {'v','*'},
+                        {'w','('},
+                    };
+                #endregion
+
+                #region Dictionary<char, char> version 2
+                Dictionary<char, char> _dcc2 = new Dictionary<char, char>(){
+                        {'N','0'},
+                        {'O','1'},
+                        {'P','2'},
+                        {'Q','3'},
+                        {'R','4'},
+                        {'S','5'},
+                        {'T','6'},
+                        {'U','7'},
+                        {'V','8'},
+                        {'W','9'},
+                        {'A','a'},
+                        {'B','b'},
+                        {'C','c'},
+                        {'D','d'},
+                        {'E','e'},
+                        {'F','f'},
+                        {'G','g'},
+                        {'H','h'},
+                        {'I','i'},
+                        {'J','j'},
+                        {'Z','k'},
+                        {'X','l'},
+                        {'Y','m'},
+                        {'K','n'},
+                        {'L','o'},
+                        {'M','p'},
+                        {'x','q'},
+                        {'y','r'},
+                        {'z','s'},
+                        {'a','t'},
+                        {'b','u'},
+                        {'c','v'},
+                        {'d','w'},
+                        {')','x'},
+                        {'!','y'},
+                        {'@','z'},
+                        {'#','A'},
+                        {'$','B'},
+                        {'%','C'},
+                        {'^','D'},
+                        {'&','E'},
+                        {'*','F'},
+                        {'(','G'},
+                        {'e','H'},
+                        {'f','I'},
+                        {'g','J'},
+                        {'0','K'},
+                        {'1','L'},
+                        {'2','M'},
+                        {'3','N'},
+                        {'4','O'},
+                        {'5','P'},
+                        {'n','Q'},
+                        {'o','R'},
+                        {'p','S'},
+                        {'q','T'},
+                        {'r','U'},
+                        {'s','V'},
+                        {'t','W'},
+                        {'u','X'},
+                        {'v','Y'},
+                        {'w','Z'},
+                        {'6',')'},
+                        {'7','!'},
+                        {'8','@'},
+                        {'9','#'},
+                        {'h','$'},
+                        {'i','%'},
+                        {'j','^'},
+                        {'k','&'},
+                        {'l','*'},
+                        {'m','('},
+                    };
+                #endregion
+
+                if (idx % 2 == 1)
+                {
+                    _r = _dcc.TryGetValue(c, out _r) ? _r : _r;
+                }
+                else
+                {
+                    _r = _dcc2.TryGetValue(c, out _r) ? _r : _r;
+                }
+
+                return _r.ToString();
+            }).ToArray());
+            return result;
+        }
+        #endregion
+
+        #region des description
+        //默认密钥向量
+        private static byte[] Keys = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
+
+        public static string DES(string text, string key = "WangZhi")
+        {
+            string result = text;
+            try
+            {
+                byte[] rgbkey = Encoding.UTF8.GetBytes(key.PadRight(8,'v').Substring(0,8));
+                byte[] rgbIV = Keys;
+                byte[] inputByteArray = Convert.FromBase64String(text);
+                DESCryptoServiceProvider DCSP = new DESCryptoServiceProvider();
+
+                using (MemoryStream mStream = new MemoryStream())
+                {
+                    CryptoStream cStream = new CryptoStream(mStream, DCSP.CreateDecryptor(rgbKey: rgbkey, rgbIV: rgbIV), CryptoStreamMode.Write);
+                    cStream.Write(inputByteArray, 0, inputByteArray.Length);
+                    cStream.FlushFinalBlock();
+                    result = Encoding.UTF8.GetString(mStream.ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return result;
+        }
+        #endregion
+
+        public static string DecryptionOG_D_N(string text)
+        {
+            return securerDecryption16_3_a(text: text);
+        }
+
+        public static string DecryptionDES(string text, string key = "WangZhi")
+        {
+            return DES(text: text, key: key);
+        }
+
+        public const string DecryptionNamePrefix = "Decryption";
+
+        public enum Names
+        {
+            OG_D_N = 0,
+            DES = 2
+        };
+
+    }
+}

@@ -1,0 +1,28 @@
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Debug\ResolveAssemblyReference.cache
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.LR.Core.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.LR.Core.pdb
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Debug\System.LR.Core.dll
+D:\Workspace\2014-09-09 personalTools\WZToolsClass\WZToolsClass\obj\Debug\System.LR.Core.pdb
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.Web.RF.dll.config
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.Web.RF.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.Web.RF.pdb
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\EPPlus.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\Newtonsoft.Json.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\NPOI.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\EPPlus.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\Newtonsoft.Json.pdb
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\Newtonsoft.Json.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\NPOI.xml
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\WZTC.csprojResolveAssemblyReference.cache
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\HQ.ResourceImage.resources
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\WZTC.csproj.GenerateResource.Cache
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\System.Web.RF.dll
+D:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\System.Web.RF.pdb
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.Web.RF.dll.config
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.Web.RF.dll
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\bin\Debug\System.Web.RF.pdb
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\HQ.ResourceImage.resources
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\WZTC.csproj.GenerateResource.Cache
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\System.Web.RF.dll
+C:\Workspace\2014-09-09_personalTools\WZToolsClass\WZToolsClass\obj\Debug\System.Web.RF.pdb

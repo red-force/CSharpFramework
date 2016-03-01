@@ -1,0 +1,4 @@
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CARFFTPCheck\bin\Debug\CARFFTPCheck.exe
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CARFFTPCheck\bin\Debug\CARFFTPCheck.pdb
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CARFFTPCheck\obj\x86\Debug\CARFFTPCheck.exe
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CARFFTPCheck\obj\x86\Debug\CARFFTPCheck.pdb

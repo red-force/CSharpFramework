@@ -1,0 +1,15 @@
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll.config
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\bin\Release\System.Web.RF.dll
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\obj\Release\RF.ResourceImage.resources
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\obj\Release\RFTC.csproj.GenerateResource.Cache
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\obj\Release\System.Web.RF.dll
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\obj\Release\RFTC.csprojResolveAssemblyReference.cache
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\bin\Release\EncodingTools.pdb
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\WZToolsClass\bin\Release\System.Web.RF.xml
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\bin\Release\System.Web.RF.dll.config
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\bin\Release\System.Web.RF.dll
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\obj\Release\RF.ResourceImage.resources
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\obj\Release\RFTC.csproj.GenerateResource.Cache
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\obj\Release\System.Web.RF.dll
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\bin\Release\System.Web.RF.xml
+C:\Users\Will_2\Documents\GitHub\mainCSharp\WZToolsClass\obj\Release\RFTC.csprojResolveAssemblyReference.cache

@@ -1,0 +1,117 @@
+﻿/* DEFAULTS
+ *----------------------------------------------------------*/
+/* HEADINGS   
+ *----------------------------------------------------------*/
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+/* PRIMARY LAYOUT ELEMENTS   
+ *----------------------------------------------------------*/
+/* TAB MENU   
+ *----------------------------------------------------------*/
+/* FORM ELEMENTS   
+ *----------------------------------------------------------*/
+/* MISC  
+ *----------------------------------------------------------*/
+/* CUSTOMIZE
+ *----------------------------------------------------------*/
+/*firefox table*/
+/* Global
+ *----------------------------------------------------------*/
+/* RFShowInfo
+ *----------------------------------------------------------*/
+.RFShowInfoContainerTop{
+cursor:pointer;display:none;position:fixed; left:21%; top:21%; width:56%; height:60%; border-width:5px; border-color:#ddd; background-color:#fff; border-radius: 25px;font-size: xx-large;text-align:center;vertical-align:middle;padding:20px;margin:0 auto;box-shadow:1px 1px 125px #ddd; overflow:visible;word-break:break-all; opacity:0.8; z-index:10000;
+}
+.RFShowInfoContentTop{
+color:#000;position:relative;top:10px;
+}
+.RFShowInfoContainerMiddle{
+cursor:pointer;display:table;display:none;position:fixed; left:21%; top:21%; width:56%; height:60%; border-width:5px; border-color:#ddd; background-color:#fff; border-radius: 25px;font-size: xx-large;text-align:center;vertical-align:middle;padding:20px;margin:0 auto;box-shadow:1px 1px 125px #ddd; overflow:visible;word-break:break-all; opacity:0.9; z-index:10000;
+}
+.RFShowInfoContentMiddle{
+color:#000;display:table-cell;vertical-align:middle;
+}
+/*
+ * tableHeaderRow
+ */
+td textarea:not([class*='ui-state']):not(.pureText),
+td input[type="text"]:not([class*='ui-state']):not(.pureText){
+    border:1px #ddd solid;
+    background-color:snow;
+    font-size:large;
+}
+.panelTitle, .borderTopCorner, .tableHeaderRow {
+	border-radius:1px 1px 0px 0px;
+}
+.tableHeaderRow .cell:first-child {
+	border-top-left-radius:1px;
+}
+.tableHeaderRow .cell:last-child {
+	border-top-right-radius:1px;
+}
+.tableHeaderRow {
+	color:#000;
+	background-color:#595959;
+	background:url('../../Resources/Images/public/b-1_13.png');
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#5D5D5D), to(#404040));
+	/** Chrome Safari **/
+	background: -moz-linear-gradient(top,#FFF ,#D5D5D5);
+	/** FireFox **/
+	background: -o-linear-gradient(top, #5D5D5D, #404040);
+	/** Opear **/
+	background: -ms-linear-gradient(#FFF 0%, #E5E5E5 100%);
+	/** IE9 IE10 **/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#5D5D5D', grandientType=1);
+	/** IE7 **/
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF', endColorstr='#5D5D5D', grandientType=1);
+	/** IE8 **/
+	border-color: #ddd;
+	border-width:  1px;
+	border-style:solid;
+}
+.tableHeaderRow .cell {
+	border-color:#8E8E8E;
+	border-width:0px 1px 0px 0px;
+	border-style:solid;
+	padding:5px 10px 5px 10px;
+	text-align:center;
+}
+.tableHeaderRow .cell:last-child {
+	border-width:0px 0px 0px 0px;
+	border-style:solid;
+}
+
+.jtable-page-number-first {
+    background-image: url('/Resources/Images/public/paging-1-1_03_03.png');
+    width: 44px;
+    cursor: pointer;
+    color: transparent;
+}
+.jtable-page-number-previous {
+    background-image: url('/Resources/Images/public/paging-1-1_03_16.png');
+    width: 44px;
+    cursor: pointer;
+    color: transparent;
+}
+.jtable-page-number-next {
+    background-image: url('/Resources/Images/public/paging-1-1_03_07.png');
+    width: 44px;
+    cursor: pointer;
+    color: transparent;
+}
+.jtable-page-number-last {
+    background-image: url('/Resources/Images/public/paging-1-1_03_09.png');
+    width: 61px;
+    cursor: pointer;
+    color: transparent;
+}
+div.jtable-main-container > div.jtable-bottom-panel div.jtable-left-area {
+    right:0px;
+    float:right;
+    position:relative;
+}
+div.jtable-main-container > div.jtable-bottom-panel div.jtable-right-area {
+    left:0px;
+    float:left;
+    position:relative;
+}

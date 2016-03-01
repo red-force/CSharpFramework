@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD7E5FA0-19BA-48C6-872B-E6959532A295}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WAExample</RootNamespace>
+    <AssemblyName>WAExample</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CARFSecurer, Version=1.0.15.1027, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\CARFSecurer\bin\Release\CARFSecurer.exe</HintPath>
+      <Aliases>carfs</Aliases>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.RF, Version=87.69.15.1029, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WZToolsClass\bin\Debug\System.Web.RF.dll</HintPath>
+      <Aliases>global,rf</Aliases>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Resources\images\public\ajax-loader-facebook.gif" />
+    <Content Include="Scripts\Example\Example.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\main\jquery-common.js" />
+    <Content Include="Scripts\main\jquery-export.min.js" />
+    <Content Include="Scripts\main\jquery-ext.min.js" />
+    <Content Include="Scripts\main\jquery-ui-ext.min.js" />
+    <Content Include="Scripts\main\jqui\jquery-ui.min.css" />
+    <Content Include="Scripts\main\nested.js" />
+    <Content Include="Scripts\main\print.js" />
+    <Content Include="Scripts\main\readme.txt" />
+    <Content Include="Styles\Example\example.css" />
+    <Content Include="Styles\main\extend.css" />
+    <Content Include="WFExample.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SRExample\configuration91.svcinfo" />
+    <None Include="Service References\SRExample\configuration.svcinfo" />
+    <None Include="Service References\SRExample\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SRExample\Service1.disco" />
+    <Content Include="Styles\main\images\extend.css" />
+    <Content Include="Styles\main\images\b-5_03.png" />
+    <Content Include="Styles\main\images\b-5_05.png" />
+    <Content Include="Styles\main\i\skinned-select-arrow.jpg" />
+    <Content Include="Styles\main\i\skinned-select-round-arrow.jpg" />
+    <Content Include="Styles\main\loader.css" />
+    <Content Include="Styles\main\MonthPicker.css" />
+    <Content Include="Styles\main\nested.css" />
+    <Content Include="Styles\main\Print.css" />
+    <Content Include="Styles\main\Site.css" />
+    <Content Include="WAInterfaceTest.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\SRExample\Service1.wsdl" />
+    <None Include="Service References\SRExample\WAExample.SRExample.ResultMsg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxResponse.cs" />
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GB.methods.cs" />
+    <Compile Include="IRFDataTable.cs" />
+    <Compile Include="IServiceResultMsg.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="NestedMasterPage.master.cs">
+      <DependentUpon>NestedMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NestedMasterPage.master.designer.cs">
+      <DependentUpon>NestedMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Passengers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RB.GB.method.cs" />
+    <Compile Include="RB.SRExample.cs" />
+    <Compile Include="RequestBus.cs" />
+    <Compile Include="RFDataTable.cs" />
+    <Compile Include="Service References\SRExample\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserSession.cs" />
+    <Compile Include="WAInterfaceTest.aspx.cs">
+      <DependentUpon>WAInterfaceTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WAInterfaceTest.aspx.designer.cs">
+      <DependentUpon>WAInterfaceTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WFExample.aspx.cs">
+      <DependentUpon>WFExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WFExample.aspx.designer.cs">
+      <DependentUpon>WFExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WFExample.method.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\main\jqui\jquery-ui-1.11.4.custom.win\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NestedMasterPage.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\main\LICENSE" />
+    <None Include="Scripts\main\README.md" />
+    <None Include="Styles\main\font\msyh.ttf" />
+    <None Include="Styles\main\font\msyhbd.ttf" />
+    <None Include="Styles\main\LICENSE" />
+    <None Include="Styles\main\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SRExample\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>37503</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

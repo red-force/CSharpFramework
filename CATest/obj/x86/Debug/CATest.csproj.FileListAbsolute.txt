@@ -1,0 +1,4 @@
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CATest\bin\Debug\CATest.exe
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CATest\bin\Debug\CATest.pdb
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CATest\obj\x86\Debug\CATest.exe
+C:\vsworkspace\2014-09-09_personalTools\RFToolsClass\CATest\obj\x86\Debug\CATest.pdb

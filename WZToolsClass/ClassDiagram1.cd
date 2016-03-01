@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RF.GlobalClass">
+    <Position X="0.5" Y="0.75" Width="9.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="RF.GlobalClass.WebForm">
+        <Compartments>
+          <Compartment Name="Nested Types" Collapsed="false" />
+        </Compartments>
+        <NestedTypes>
+          <Class Name="RF.GlobalClass.WebForm.ControlCollection" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>WebForm.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.WebForm.Excel" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>WebForm.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+        </NestedTypes>
+        <TypeIdentifier>
+          <NewMemberFileName>WebForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.Log">
+        <TypeIdentifier>
+          <NewMemberFileName>Log.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.Config">
+        <TypeIdentifier>
+          <NewMemberFileName>Config.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.Securer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Securer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.WinForm">
+        <Compartments>
+          <Compartment Name="Nested Types" Collapsed="false" />
+        </Compartments>
+        <NestedTypes>
+          <Class Name="RF.GlobalClass.WinForm.ControlCollection" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>WinForm.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.WinForm.Message" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>WinForm.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.WinForm.Thread" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>WinForm.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+        </NestedTypes>
+        <TypeIdentifier>
+          <NewMemberFileName>WinForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.Const" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Utils.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.Utils">
+        <Compartments>
+          <Compartment Name="Nested Types" Collapsed="false" />
+        </Compartments>
+        <NestedTypes>
+          <Class Name="RF.GlobalClass.Utils.Net">
+            <NestedTypes>
+              <Class Name="RF.GlobalClass.Utils.Net.URL" Collapsed="true">
+                <TypeIdentifier>
+                  <NewMemberFileName>Utils.cs</NewMemberFileName>
+                </TypeIdentifier>
+              </Class>
+              <Class Name="RF.GlobalClass.Utils.Net.web" Collapsed="true">
+                <TypeIdentifier>
+                  <NewMemberFileName>Utils.cs</NewMemberFileName>
+                </TypeIdentifier>
+              </Class>
+            </NestedTypes>
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.WebBrowser" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.XML">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.Do" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.DB" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.Format">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.Convert" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.DateTime" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.IO">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+          <Class Name="RF.GlobalClass.Utils.Convertion">
+            <TypeIdentifier>
+              <NewMemberFileName>Utils.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Class>
+        </NestedTypes>
+        <TypeIdentifier>
+          <NewMemberFileName>Utils.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.RegistryAccess" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RegistryAccess.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.DB" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ConnDB.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="RF.GlobalClass.Excel" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Excel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

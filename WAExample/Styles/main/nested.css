@@ -1,0 +1,222 @@
+/* DEFAULTS
+ *----------------------------------------------------------*/
+/* HEADINGS   
+ *----------------------------------------------------------*/
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+/* PRIMARY LAYOUT ELEMENTS   
+ *----------------------------------------------------------*/
+/* TAB MENU   
+ *----------------------------------------------------------*/
+/* FORM ELEMENTS   
+ *----------------------------------------------------------*/
+/* MISC  
+ *----------------------------------------------------------*/
+/* CUSTOMIZE
+ *----------------------------------------------------------*/
+/*firefox table*/
+/* Global
+ *----------------------------------------------------------*/
+/* Table
+ *----------------------------------------------------------*/
+table tr .tableCellWithBorder{
+    border: 1px solid rgb(204, 204, 204);
+}
+.tableHeaderRow {
+	color:#000;
+	background-color:#595959;
+	background:url('../../Resources/Images/public/b-1_13.png');
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#D5D5D5), to(#FAFAFA));
+	/** Chrome Safari **/
+	background: -moz-linear-gradient(top,#D5D5D5 -110% ,#FAFAFA 30%);
+	/** FireFox **/
+	background: -o-linear-gradient(top, #5D5D5D, #404040);
+	/** Opear **/
+	background: -ms-linear-gradient(#FFF 0%, #E5E5E5 100%);
+	/** IE9 IE10 **/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#D5D5D5', grandientType=1);
+	/** IE7 **/
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#D5D5D5', grandientType=1);
+	/** IE8 **/
+	border-color: #ddd;
+	border-width:  1px;
+	border-style:solid;
+	padding: 4px 0px 0px 0px;
+}
+
+.tableFooterRow {
+}
+.tableFooterRow>td {
+	white-space:nowrap;
+}
+.labelOnImage{
+    position:relative;
+    top:-45px;
+    float:none;
+}
+.tableTopRightColumnBackgroundImage{
+    background-image:url("../../Resources/Images/AttendanceFill/b-1_09.png");
+}
+.tableColumnHeaderBackgroundImage{
+    background-image:url("../../Resources/Images/AttendanceFill/b-1_11.png");
+}
+input.DataCell{
+	width: 90%;
+}
+.Sortable>.DESC
+,.Sortable>.ASC
+,.Sortable>.SC
+,.CheckReverseIcon
+,.CheckAllIcon{
+	width:16px;
+	height:18px;
+	display:inline-block;
+	vertical-align:bottom;
+	vertical-align:text-bottom;
+	cursor:pointer;
+	background-repeat: round;
+	background-position: center center;
+	background-size: 100% 100%;
+	opacity:0.7;
+	margin:0 0.2em;
+}
+.Sortable>.SC{
+    background-image:url("../../Resources/Images/public/column-asc.png");
+}
+.Sortable>.ASC{
+    background-image:url("../../Resources/Images/public/column-desc.png");
+}
+.Sortable>.DESC{
+    background-image:url("../../Resources/Images/public/column-sortable.png");
+}
+.CheckAllIcon{
+    background-image:url("../../Resources/Images/public/check_all.png");
+}
+.CheckReverseIcon{
+    background-image:url("../../Resources/Images/public/check_reverse.png");
+}
+.pageFirst, .pagePrev, .pageNext, .pageLast, .pageButton{
+	display:inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-color: aliceblue;
+	position:relative;
+	margin:1px 1px;
+	background-color:ghostwhite;
+	color:Black;
+	height: 24px;
+	line-height: 24px;
+	cursor:pointer;
+	padding: 0 1px;
+}
+.pageFirst.disabled, .pagePrev.disabled, .pageNext.disabled, .pageLast.disabled, .pageButton.disabled
+{
+	cursor:not-allowed;
+    background-color: whitesmoke;
+    color: lightgray;
+}
+/*
+ *Loader
+ * ---------------------------------------------------------*/
+
+.Loader{
+	background-position-x:center;
+	background-position-y:center;
+}
+.Loader.facebook {
+	background-size:auto;
+    background-image: url('../../Resources/Images/public/ajax-loader-facebook.gif');
+	width:auto;
+	height:auto;
+}
+.Loader.facebookSync {
+	background-size:auto;
+    background-image: url('../../Resources/Images/public/ajax-loader-facebook-sync.png');
+	width:auto;
+	height:auto;
+	min-width:120px;
+	margin-left:-60px;
+}
+/*
+ * Validation
+ * ---------------------------------------------------------*/
+.ValidationContainer {
+    height: 0px;
+    max-height: 0px;
+    max-width: 0px;
+    display: inline-block;
+    overflow: visible;
+    /*float: left;*/
+    width: 0px;
+	max-width:0px;
+	max-height:0px;
+	white-space:nowrap;
+}
+.ValidationMessage {
+    float: left;
+    position: relative;
+    /*right: 100px;*/
+    top: -17px;
+    border-radius: 5px;
+    /*width: 100px;*/
+	border-style:solid;
+	border-width:1px;
+    border-color: salmon;
+    height: 27px;
+    opacity: 0.9;
+    background-color: cornsilk;
+    color: royalblue;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px 2px;
+    text-shadow: 1px 1px 9px #8df;
+    font-size: medium;
+    font-weight: normal;
+    box-shadow: 5px 2px 20px lightsalmon #fd9;
+    display: inline-block;
+}
+/*
+ * Radio ButtonSet
+ * ---------------------------------------------------------*/
+.RadioContainer .ui-button-text-only .ui-button-text{
+    padding: 0em 1em;
+	padding-left:1.5em;
+}
+
+.RadioContainer .ui-state-default/*, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default */{
+    background: transparent url("images/b-5_05.png") 0% 50% no-repeat;
+    font-weight: normal;
+    color: #555;
+	border-width:0px;
+}
+
+.RadioContainer .ui-state-hover/*, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .RadioContainer .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus */{
+    border: 1px solid #999;
+    background: #f7f7f7 url("images/b-5_05.png") 0% 50% no-repeat;
+	opacity:0.7;
+    font-weight: normal;
+    color: #212121;
+	border-width:0px;
+}
+
+.RadioContainer .ui-state-active/*, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active */{
+    background: #fff url("images/b-5_03.png") 0% 50% no-repeat;
+    font-weight: normal;
+    color: #212121;
+	border-width:0px;
+}
+*{
+	/*
+	*background-color:lightgrey !important;
+	_background-color:grey !important;
+	*filter:alpha(opacity = 90) !important;
+	_filter:alpha(opacity = 30) !important;
+	*/
+	_filter:gray !important;
+}
+html{
+	*filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=0)\9 !important*
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#D5D5D5', grandientType=1) !important;
+	BORDER-LEFT: #ddd 1px solid !important;
+}
+/* vim: set si sts=4 ts=4 sw=4 fdm=indent :*/

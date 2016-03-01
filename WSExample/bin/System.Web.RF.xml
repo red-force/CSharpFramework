@@ -1,0 +1,2397 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Web.RF</name>
+    </assembly>
+    <members>
+        <member name="T:RF.GlobalClass">
+            <summary>
+            全局類,設計為存儲全局的常量及變量；Global Class, design for storing constants and variables with global scope.
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.Const">
+            <summary>
+            常量類；Const
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.Const.ValidationResult">
+            <summary>
+            the result state of the method ValidateXMLWidthXSDResult
+            </summary>
+            <value>Failed</value>
+        </member>
+        <member name="F:RF.GlobalClass.Const.ValidationResult.Failed">
+            <summary>
+            Failed to pass the validation.
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Const.ValidationResult.Passed">
+            <summary>
+            Passed the validation.
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.Utils">
+            <summary>
+            工具類；Utils
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.dynamicallyCallClassMethod(System.Type,System.String,System.Object[],System.Object)">
+            <summary>
+            Dynamically Call Class Method
+            </summary>
+            <param name="typeofClass"></param>
+            <param name="methodName"></param>
+            <param name="args"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+            <example>
+            <code language="C#" title="Dynamical Call Method o f Class">
+            #region check the global translation method
+            if (String.Empty == result || dictValue == result)
+            {
+                try
+                {
+                    Object[] args = new Object[] { dictName, dictValue, domain, language };
+                    String methodName 
+            			= String.Join("_", (new string[] { "worldWide" }))
+            				.Replace("-", "__")
+            					.Replace("/", "_OR_").Replace(":", "_IS_");
+                    result 
+            			= Convert.ToString(
+            					RF.GlobalClass.Utils.Do.dynamicallyCallClassMethod(typeof(Dict)
+            					, methodName
+            					, args
+            					, defaultValue: result));
+                }
+                catch (Exception ex) { }
+            }
+            else { }
+            #endregion
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.dynamicalInvoke(System.String,System.String,System.String,System.Object[])">
+            <summary>
+            動態的調用指定類的方法； invke dynamically the method of given class.
+            </summary>
+            <param name="assemblyName"></param>
+            <param name="className"></param>
+            <param name="methodName"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RF.GlobalClass.Utils.Do.MagicMethod2``1(System.Reflection.MethodInfo)" -->
+        <member name="M:RF.GlobalClass.Utils.Do.MagicMethod``1(System.Reflection.MethodInfo)">
+            <summary>
+            Magic Method with One parameter. Func&lt;T, object, object&gt;
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="method"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.MagicMethod``2(System.Reflection.MethodInfo)">
+            <summary>
+            Magic Method as U defined (Recommend)
+            </summary>
+            <typeparam name="T">Method Result Class</typeparam>
+            <typeparam name="U">Method Class</typeparam>
+            <param name="method">the method info
+            <example language="C#">
+            typeof(SRExample.ServiceSoapClient).GetMethod(methodName, new[] { typeof(string) })
+            </example>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.MagicProperty``1(System.Object,System.String)">
+            <summary>
+            dynamically get property value of the object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.MagicField``1(System.Object,System.String)">
+            <summary>
+            dynamically get field value of the object
+            </summary>
+            <param name="obj"></param>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.getPropertyNamesOfObject(System.Object)">
+            <summary>
+            Get Property Names of Object
+            </summary>
+            <param name="obj">any object</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.getMethodNamesOfObject(System.Object)">
+            <summary>
+            Get Method Names of Object
+            </summary>
+            <param name="obj">any object</param>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Do.Command">
+            <summary> 
+            Command 的摘要说明。 
+            </summary> 
+            <example >
+                <code description="hwo to use" language="C#">
+                Command cmd = new Command(); 
+                cmd.RunCmd("dir"); 
+                </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.Command.#ctor">
+            <summary> 
+            构造方法 
+            </summary> 
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.Command.RunCmd(System.String)">
+            <summary> 
+            执行CMD语句 
+            </summary> 
+            <param name="cmd">要执行的CMD命令</param> 
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Do.Command.RunProgram(System.String,System.String,System.String)">
+            <summary> 
+            打开软件并执行命令 
+            </summary> 
+            <param name="programName">软件路径加名称（.exe文件）</param> 
+            <param name="cmd">要执行的命令</param> 
+            <returns>one line result</returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Convertion">
+            <summary>
+            <c>此類名將會被停用，請使用Convert；Deprecated，using Convert instead</c>類型轉換類；Convertion
+            </summary>
+            <example>
+                <code>
+                    GlobalClass.Utils.Convertion gcuc = new GlobalClass.Utils.Convertion();
+                </code>
+            </example>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Convert">
+            <summary>
+            類型轉換類；Convert
+            </summary>
+            <example>
+                <code>
+                    GlobalClass.Utils.Convert gcuc = new GlobalClass.Utils.Convert();
+                </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.EnumValueToString(System.Enum)">
+            <summary>
+            用于 转换 枚举（Enum）的 值为 字符串。
+            <remarks>
+                <para>
+                    <code>
+                        GlobalClass.Utils.Convertion.EnumValueToString(monthOffSet);
+                    </code>
+                </para>
+            </remarks>
+            </summary>
+            <param name="enumValue">枚举值</param>
+            <returns>字符串格式枚举值</returns>
+            <example>
+                <code>
+                    string enumStr = GlobalClass.Utils.Convertion.EnumValueToString(TypeCode.String);
+                </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringToNumber(System.Object,System.Double)">
+            <summary>
+            format string to number. Specially for the string value of width and height, which might be end with characters like "px" or "em".
+            </summary>
+            <param name="width">Can be String, Can be System.Web.UI.WebControls.Unit.</param>
+            <param name="plus">default 0;</param>
+            <returns>double</returns>
+            <example>
+                <para>
+                    <code>
+                        dialog.Style.Add("min-width", GlobalClass.Utils.Convertion.StringToNumber(this.Width) + "px");
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringToMD5(System.String)">
+            <summary>
+            Encoding String using MD5
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.GetMd5Hash(System.String,System.Security.Cryptography.MD5,RF.GlobalClass.Utils.Convert.StringifyMD5Bytes)">
+            <summary>
+            Encrypt the string by using MD5
+            </summary>
+            <param name="input">string to be encrypted</param>
+            <param name="md5Hash">the md5hash created by MD5 encryption function, e.g. System.Security.Cryptography.MD5CryptoServiceProvider(); Or MD5.Create();</param>
+            <param name="stringifyMD5Bytes">the customizable delegate function to stringify the byte[], created by md5Hash.ComputeHash(string);</param>
+            <returns>the encrypted string</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.VerifyMd5Hash(System.String,System.String,System.Security.Cryptography.MD5,RF.GlobalClass.Utils.Convert.StringifyMD5Bytes)">
+            <summary>
+            Verify a hash against a string.
+            </summary>
+            <param name="hash">the encrypted string to be verified</param>
+            <param name="input">the unencrypted string to encrypt</param>
+            <param name="md5Hash">the md5hash created by MD5 encryption function, e.g. System.Security.Cryptography.MD5CryptoServiceProvider(); Or MD5.Create();</param>
+            <param name="stringifyMD5Bytes">the customizable delegate function to stringify the byte[], created by md5Hash.ComputeHash(string);</param>
+            <returns>the boolean result. true, passed the verification; false, not.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.Base64ToString(System.String)">
+            <summary>
+            Decode base64 string to normal String.
+            </summary>
+            <param name="base64Str">base64 string</param>
+            <returns>normal string</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.HexadecimalToString(System.String)">
+            <summary>
+            Convert Hexadecimal value String to String
+            </summary>
+            <param name="hexadecimal">the hexadecimal with/without 0x prefix</param>
+            <returns>String value or the Original Hexadeciaml</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringToHexadecimal(System.String,System.String)">
+            <summary>
+            Convert String to Hexadecimal value
+            </summary>
+            <param name="str">the string to convert</param>
+            <param name="prefix">the prefix of the hexadecimal</param>
+            <returns>the hexadecimal or the original string</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringToImage(System.String,System.Drawing.Font,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Convert Text to Image
+            </summary>
+            <param name="text"></param>
+            <param name="font"></param>
+            <param name="textColor"></param>
+            <param name="backColor"></param>
+            <param name="imageHeight"></param>
+            <param name="imageWidth"></param>
+            <param name="horizontalTextAlign"></param>
+            <param name="verticalTextAlign"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringToBarcode(System.String)">
+            <summary>
+            Convert String to Barcode.
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.Base64ToImage(System.String)">
+            <summary>
+            Convert Base64 data to System.Drawing.Image
+            </summary>
+            <param name="base64String"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.ImageToBase64(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Convert System.Drawing.Image to Base64 data
+            </summary>
+            <param name="image"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.ObjectToJSON(System.Object)">
+            <summary>
+            Convert object to json string
+            </summary>
+            <param name="o">the object to convert</param>
+            <returns>JSON string</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.JSONToXNode(System.String)">
+            <summary>
+            Convert JSON to XNode
+            </summary>
+            <param name="sJSON">The JSON String</param>
+            <returns>XNode</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.JSONToObject(System.String,System.Type,System.String)">
+            <summary>
+            JsonConvert DeserializeObject
+            </summary>
+            <param name="p">jsonText</param>
+            <param name="type">the type that is supposed to convert to.</param>
+            <param name="mode">object (type is needed)/array (type is needed)/List&lt;Dictionary&lt;string,string&gt;&gt;/Dictionary&lt;string,string></param>
+            <returns>object</returns>
+            <example>the following is an example of calling a
+                <c>JSONToObject</c> function:
+                <para>
+                    <code>
+                        List&lt;Dictionary&lt;string, string&gt;&gt; power = (List&lt;Dictionary&lt;string, string&gt;&gt;)RequestBus.JsonConvertDeserializeObject(resultMsg.Obj.ToString(), mode: "List&lt;Dictionary&lt;string, string&gt;&gt;");
+                    
+                        //Power power = (Power)RequestBus.JsonConvertDeserializeObject(resultMsg.Obj.ToString(), type:typeof(Power)) ?? new Power();
+                    
+                        resultStr = 0 == power.Count ? "" : (power[0]["pwrid"] ?? "").ToString().Trim() ?? "";
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.JSONToObject``1(System.String)">
+            <summary>
+            JsonConvert DeserializeObject
+            </summary>
+            <typeparam name="T">the type that is supposed to convert to.</typeparam>
+            <param name="p">jsonText</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.XMLtoString(System.Xml.XmlReader)">
+            <summary>
+            from xml to string
+            </summary>
+            <param name="xmlReader">XmlReader,which may be created from a xml file path or textReader of a xml string.</param>
+            <returns>the string of the xml</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.XNodeToJSON(System.Xml.XmlNode)">
+            <summary>
+            XNodeToJSON
+            </summary>
+            <param name="xNode"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RF.GlobalClass.Utils.Convert.ListDictioanryStringStringToListDictionaryStringObject(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})" -->
+        <member name="T:RF.GlobalClass.Utils.Convert.StringifyMD5Bytes">
+            <summary>
+            Stringify the bytes from MD5 encryption.
+            </summary>
+            <param name="MD5Bytes">the byte[], created by md5Hash.ComputeHash(string);.</param>
+            <returns>result string</returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Convert.StringTo">
+            <summary>
+            Convert String To
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.Any(System.String,System.String,System.String,System.String)">
+            <summary>
+            convert string to
+            </summary>
+            <param name="inStr"></param>
+            <param name="fromEncoding"></param>
+            <param name="toEncoding"></param>
+            <param name="usage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.ConvertUTF8ToUnicode(System.String)">
+            <summary>
+            convert utf8 encoding string to unicode encoding.
+            </summary>
+            <param name="utf8Str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.ConvertUnicodeToUTF8(System.String)">
+            <summary>
+            convert unicode encoding string to utf8encoding.
+            </summary>
+            <param name="unicodeStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.UTF8(System.String,System.String)">
+            <summary>
+            to UTF8
+            </summary>
+            <param name="intStr"></param>
+            <param name="usage">"MIME" or "Stream"</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.ConvertUnicodeStringToChinese(System.String)">
+            <summary>
+            UNICODE字符转为中文   
+            对这个方法做一点改进 使他支持中英混排  
+            </summary>
+            <param name="unicodeString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.ConverUnicodeStringToChar(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.ConvertStringToHex(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="asciiString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Convert.StringTo.ConvertHexToString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="HexValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Format">
+            <summary>
+            格式化；Format Values
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Format.formatToFolderPathPostfix(System.Text.RegularExpressions.Match)">
+            <summary>
+            Formatting the matched postfix string to the style of folder path.
+            <para>
+             System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex("[^/]+$");
+            </para>
+                                System.Text.RegularExpressions.Match rem = r.Match(sValue);
+                                string folderPathShouldEndWithSlash = GlobalClass.Utils.Format.formatToFolderPathPostfix(rem);
+            </summary>
+            <param name="rem">the matched value</param>
+            <returns>the postfix string with the format of folder path.</returns>
+            <example>
+                                System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex("[^/]+$");
+                                System.Text.RegularExpressions.Match rem = r.Match(sValue);
+                                string folderPathShouldEndWithSlash = GlobalClass.Utils.Format.formatToFolderPathPostfix(rem);
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Format.formatToFilePathPostfix(System.Text.RegularExpressions.Match)">
+            <summary>
+            Formatting the matched postfix string to the style of file path.
+            </summary>
+            <param name="rem">the matched value</param>
+            <returns>the postfix string with the format of file path.</returns>
+            <example>
+                                System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex("[^/]+$");
+                                System.Text.RegularExpressions.Match rem = r.Match(sValue);
+                                string filePathShouldEndWithOutSlash = GlobalClass.Utils.Format.formatToFilePathPostfix(rem);
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Format.formatToItsOwnPostfix(System.Text.RegularExpressions.Match)">
+            <summary>
+            Formatting the matched postfix string to its own postfix. Thus this method will do nothing but return the value its self.
+            </summary>
+            <param name="rem">the matched value</param>
+            <returns>the postfix string its self</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Format.FormatPath(System.String,System.String)">
+            <summary>
+            Format Path
+            </summary>
+            <param name="sValue">the string of path to format</param>
+            <param name="sType">the type of the path, available values are "folder", "file".</param>
+            <returns>the string format as the path type required.</returns>
+            <example>
+                <para>
+                    <code>
+                        Config._logDir = Utils.Format.FormatPath(value, "folder");
+                    </code>
+                    <code>
+                        Config._monitoringLogFileName = Utils.Format.FormatPath(value, "file");
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Format.MakeSureEndWith(System.String,System.String)">
+            <summary>
+            make sure the string end with the specific value.
+            </summary>
+            <param name="sValue">the target string to check</param>
+            <param name="sSuffix">the specified value that the target string is supposed to be end with.</param>
+            <returns>the string match the request format</returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.WebBrowser">
+            <summary>
+            關於瀏覽器的方法集合；collection of the method about the web browser.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.WebBrowser.getInternetExplorerVersion(System.Web.HttpRequest)">
+            <summary>
+            Try to identify the version of the IE web browser.
+            </summary>
+            <param name="Request">Instance of the System.Web.HttpRequest</param>
+            <returns>double -1 :not an IE browser; 7.0: IE7</returns> 
+            <example>
+            The following is the Example of how to use this function:
+                <para>
+                    <code>
+                         double ieVersion = RequestBus.getInternetExplorerVersion(Request);
+                         
+                         if (ieVersion > 0.0)
+                         { //IE
+                         if (ieVersion > 7.0)
+                         {
+                         }
+                         else if (ieVersion == 7.0)
+                         {
+                         }
+                         else if (ieVersion &lt; 7.0)
+                         {
+                         }
+                         }
+                         else
+                         {
+                         }
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.WebBrowser.getPlatform(System.Web.HttpRequest)">
+            <summary>
+            try to get platform
+            </summary>
+            <param name="Request">Instance of the System.Web.HttpRequest</param>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Net">
+            <summary>
+                網絡相關類；Network
+            </summary>
+            <example>GlobalClass.Utils.Net gcun = new GlobalClass.Utils.Net();</example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.GetData(System.String)">
+            <summary>
+            通過URI請求數據。
+            Request Data By Provide the URI.
+            http://msdn.microsoft.com/en-us/library/456dfw4f%28v=vs.100%29.aspx
+            </summary>
+            <param name="sURI">請求； URI</param>
+            <returns>從服務器返回的字符串結果；String result of the response from the server.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.SendData(System.String,System.String,System.String,System.String)">
+            <summary>
+            以Post方式發送數據 Send Data
+            </summary>
+            <param name="sURL">用於接收請求的URL地址；a URL that can receive a post.</param>
+            <param name="postData">請求中要附帶的參數數據；the data to be post.</param>
+            <param name="sMethod">請求的方式；the request type.</param>
+            <param name="sRequestContentType">請求的類容格式；the content type of request.</param>
+            <returns>服務器返回的結果字符串；String result of the response from the server.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.SendRequest(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            用于 向服务器送出请求 。
+            C# HTTP Request请求程序模拟。             
+            </summary> 
+            <param name="sURL">标识Internet资源的URI。</param>
+            <param name="sParam">包含要编码的字符的 System.String</param>
+            <param name="sMethod">請求方式；request method</param>
+            <param name="sType">請求類型，如：SOAP；the request type, eg: SOAP</param>
+            <param name="sContentType">請求內容類型</param>
+            <param name="htRequestHeader">請求頭自定義參數</param>
+            <returns>来自服务器的响应体的 流的 字符串。</returns>
+            <example>
+                <para>
+                    <code>
+                        Hashtable htRequestHeader = new Hashtable();
+                        htRequestHeader.Add("SOAPAction", @"http://www.hqls.com.cn/GetInfoCls");
+                        System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
+                        xmlDocument.LoadXml(GlobalClass.Utils.Net.SendRequest(@"http://192.4.200.38/bb/NoteMange/NoteService.asmx?op=GetInfoCls", GlobalClass.Utils.XML.UseSOAPTemplateString(@"&lt;GetAllTbInfo xmlns=""http://www.hqls.com.cn/"">
+                        &lt;clsid>note_lx&lt;/clsid>
+                        &lt;/GetAllTbInfo>"), sType: "SOAP", sContentType: "text/xml; charset=utf-8", htRequestHeader: htRequestHeader));
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.SendRequestV2(System.String,System.String,System.String,System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            用于 向服务器送出请求 。
+            C# HTTP Request请求程序模拟。             
+            </summary> 
+            <param name="sURL">标识Internet资源的URI。</param>
+            <param name="sParam">包含要编码的字符的 System.String</param>
+            <param name="sMethod">請求方式；request method</param>
+            <param name="sType">請求類型，如：SOAP；the request type, eg: SOAP</param>
+            <param name="sContentType">請求內容類型</param>
+            <param name="htRequestHeader">請求頭自定義參數</param>
+            <returns>来自服务器的响应体的 流的 字符串。</returns>
+            <example>
+                <para>
+                    <code>
+                        Hashtable htRequestHeader = new Hashtable();
+                        htRequestHeader.Add("SOAPAction", @"http://www.hqls.com.cn/GetInfoCls");
+                        System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
+                        xmlDocument.LoadXml(GlobalClass.Utils.Net.SendRequest(@"http://192.4.200.38/bb/NoteMange/NoteService.asmx?op=GetInfoCls", GlobalClass.Utils.XML.UseSOAPTemplateString(@"&lt;GetAllTbInfo xmlns=""http://www.hqls.com.cn/"">
+                        &lt;clsid>note_lx&lt;/clsid>
+                        &lt;/GetAllTbInfo>"), sType: "SOAP", sContentType: "text/xml; charset=utf-8", htRequestHeader: htRequestHeader));
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.SetRequestHeaderValue(System.Net.WebHeaderCollection,System.String,System.String)">
+            <summary>
+            設置請求頭的值
+            </summary>
+            <param name="header">請求頭</param>
+            <param name="name">鍵名稱</param>
+            <param name="value">值</param>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Net.URL">
+            <summary>
+            瀏覽器鏈接地址；Uniform Resource Locator
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.URL.getRequestUrlPath(System.Uri)">
+            <summary>
+            用于 取得 根据传入的URI值 解析得到的 URL基本字符串（不含参数）
+            </summary>
+            <param name="url">Uri</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.URL.getNewRequestUrl(System.Uri,System.String,System.String,System.String)">
+            <summary>
+            get a new request uri
+            </summary>
+            <param name="requestURI"></param>
+            <param name="requestQueryString"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <example>
+            <code>
+            Response.Redirect(getNewRequestUrl(Request.Url, Request.QueryString.ToString(), "key", "value"));
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.URL.getNewRequestUrl(System.String,System.String,System.String,System.String)">
+            <summary>
+            get a new request uri
+            </summary>
+            <param name="requestURIAbsolutePath"></param>
+            <param name="requestQueryString"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <example>
+            <code>
+            Response.Redirect(getNewRequestUrl(Request.Url.AbsolutePath, Request.QueryString.ToString(), "key", "value"));
+            </code>
+            </example>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RF.GlobalClass.Utils.Net.URL.getNewRequestUrl(System.String,System.String,System.Collections.Specialized.NameValueCollection,System.String[])" -->
+        <member name="M:RF.GlobalClass.Utils.Net.URL.getNewRequestUrl(System.Uri,System.String,System.Collections.Specialized.NameValueCollection,System.String[])">
+            <summary>
+            get a new request uri
+            </summary>
+            <param name="requestURI"></param>
+            <param name="requestQueryString"></param>
+            <param name="nameValues"></param>
+            <param name="removeKeys"></param>
+            <example>
+            <code>
+            NameValueCollection nvc = new NameValueCollection();
+            nvc.Set("ProductID", nvc["PRO_ID"]);
+            nvc.Set("PrevPageNum", pageNum.ToString());
+            Response.Redirect(getNewRequestUrl(Request.Url, Request.QueryString.ToString(), nvc));
+            </code>
+            </example>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.Net.web">
+            <summary>
+            網頁相關類；WebPage
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.web.RequestWebPageAsStream(System.String)">
+            <summary>
+            請求網頁，並以流的形式返回；Request a Web Page and Retrieve the Results as a Stream
+            http://msdn.microsoft.com/en-us/library/bay1b5dh%28v=vs.100%29.aspx
+            </summary>
+            <param name="sURL">請求地址；the URL of the web page.</param>
+            <returns>服務器返回的結果流；the System.IO.Stream result of the request.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.Net.web.RequestWebPageAsString(System.String)">
+            <summary>
+            請求網頁，並以字符串的形式返回；Request a Web Page and Retrieve the Results as a String.
+            </summary>
+            <param name="sURL">請求地址；the URL of the web page.</param>
+            <returns>服務器返回的結果字符串；the System.String result of the request.</returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.XML">
+            <summary>
+            可擴展標記語言文檔相關類；eXtensible Markup Language  Documents.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.getXMLSingleNodeAttributeValue(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            用于 取得 可扩展标记语言（XML）的 指定的单一节点的 值。
+            </summary>
+            <param name="xml">用于被搜查的可扩展标记语言文档</param>
+            <param name="xpath">xPath 表达式</param>
+            <param name="attributeName">要检索的元素的限定名</param>
+            <returns>可扩展标记语言 元素 或 null</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.SaveXML(System.String,System.String)">
+            <summary>
+            Save XML String as xml file.
+            </summary>
+            <param name="sXMLContent">the String of XML.</param>
+            <param name="sXMLFileName">the file name of the XML.</param>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.LoadXML(System.String)">
+            <summary>
+            Load XML file as XDocument.
+            </summary>
+            <param name="sXMLFileName">the file name of the XML.</param>
+            <returns>System.XML.Linq.XDocument, the XDocument result.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.GetXmlNamespaceManager(System.Xml.XmlDocument,System.Collections.Hashtable)">
+            <summary>
+            獲取Xml命名空間管理者。get the new XmlNamespaceManager.
+            </summary>
+            <param name="xmlDocument">the nameTable owner</param>
+            <param name="htNamespace">the Hashtable of the Namespaces with format like : [prefix:uri]</param>
+            <returns>XmlNamespaceManager</returns>
+            <example>
+                <para>
+                    <code>
+                        System.Collections.Hashtable htN = new System.Collections.Hashtable();
+                        htN.Add("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+                        htN.Add("hq", "http://www.hqls.com.cn/");
+                        System.Xml.XmlNode xmlNode = xmlDocument.SelectSingleNode("//soap:Envelope/soap:Body/hq:GetInfoClsResponse/hq:GetInfoClsResult/hq:Obj", GlobalClass.Utils.XML.GetXmlNamespaceManager(xmlDocument, htN));
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.UseSOAPTemplateString(System.String)">
+            <summary>
+            使用SOAP的XML模板，將soap:Body內的字符串形式的XML節點嵌入其中，並得到完整的SOAP XML字符串值。
+            Get the String of SOAP's XML by passing the Nodes inside the soap:Body as string param to the method.
+            </summary>
+            <param name="sParam">soap:Body內的字符串形式的XML節點;the string of the Nodes inside the soap:Body</param>
+            <returns>string of SOAP's XML</returns>
+            <example>
+                <para>
+                    <code>
+                        Hashtable htRequestHeader = new Hashtable();
+                        htRequestHeader.Add("SOAPAction", @"http://www.hqls.com.cn/GetInfoCls");
+                        System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
+                        xmlDocument.LoadXml(GlobalClass.Utils.Net.SendRequest(@"http://192.4.200.38/bb/NoteMange/NoteService.asmx?op=GetInfoCls", GlobalClass.Utils.XML.UseSOAPTemplateString(@"&lt;GetAllTbInfo xmlns=""http://www.hqls.com.cn/"">
+                        &lt;clsid>note_lx&lt;/clsid>
+                        &lt;/GetAllTbInfo>"), sType: "SOAP", sContentType: "text/xml; charset=utf-8", htRequestHeader: htRequestHeader));
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.GetXSDFromXML(System.String)">
+            <summary>
+            Get XmlSchemaSet of XSD from XML.
+            </summary>
+            <example>
+                
+                <para>
+                <code>
+                foreach (System.Xml.Schema.XmlSchema s in schemaSet.Schemas())
+                {
+                    s.Write(Console.Out);
+                }
+                </code>
+                </para>
+            </example>
+            <param name="xmlFilePath">the file path of the xml</param>
+            <returns>XmlSchemaSet</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.ValidateXMLWidthXSD(System.String,System.String,System.String)">
+            <summary>
+            validate XML by using XSD.
+            </summary>
+            <param name="xmlFilePath">the file path of XML</param>
+            <param name="xsdFilePath">the file path of XSD</param>
+            <param name="xsdNamespace">the xsdNamespace</param>
+            <returns>the System.Xml.XmlReader</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.ValidateXMLWidthXSD(System.IO.TextReader,System.String,System.String)">
+            <summary>
+            Validate the XML with XSD file
+            </summary>
+            <param name="xmlTextReader">the textReader of the XML</param>
+            <param name="xsdFilePath">the file path of the XSD</param>
+            <param name="xsdNamespace">the name-space of the XSD</param>
+            <returns>if passed the validate, return "passed"; Or return the validate log.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.ValidateXMLWidthExampleXml(System.String,System.String)">
+            <summary>
+            validateXML by using ExampleXML
+            </summary>
+            <param name="xmlFilePath">the file path of the target XML</param>
+            <param name="exampleXmlFilePath">the file path of the example XML</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.XML.ValidateXMLWidthExampleXml(System.IO.TextReader,System.String)">
+            <summary>
+            Validate the XML via Example XML.
+            </summary>
+            <param name="xmlTextReader">the System.IO.TextReader of the target XML.</param>
+            <param name="exampleXmlFilePath">the file path of the example XML</param>
+            <returns>the XmlReader of the validated XML.</returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.IO">
+            <summary>
+            有關文件讀寫的類；Input and Output
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.WriteToFile(System.String,System.Collections.Hashtable,System.String,System.String,System.Boolean)">
+            <summary>
+            Append Contents to specific file.
+            </summary>
+            <param name="sURI">the URI of the file that will be appended to.</param>
+            <param name="hContents">the Hashtable of the Contents. line number is the suggested key(won't care what it actually is.), and string of the content is the value.</param>
+            <param name="sNewLine">the new line string to be used by TextWriter.</param>
+            <param name="ifCompress">if need to compress the file.</param>
+            <param name="createNewFile" >if need to create new file or override the exist file.</param>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.AppendToFile(System.String,System.String,System.String,System.String)">
+            <summary>
+            Append string Content to specific file.
+            </summary>
+            <param name="sURI">the URI of the file that will be appended to.</param>
+            <param name="sContent">the string to be appended.</param>
+            <param name="sNewLine">the new line string to be used by TextWriter.</param>
+            <param name="ifCompress">if need to compress the file.</param>
+            <example>
+            <code language="C#" title="Append text to file">
+            #if LOGIT
+            	RF.GlobalClass.Utils.IO.AppendToFile(Application.StartupPath + @"\swing_card_log\" + this.Name + "_" + RF.GlobalClass.Utils.DateTime.GetDateTimeString(DateTime.Now).Replace(':', '.').Replace(" ", "_"), "刷卡金额为" + amount + "\r\n刷卡返回信息s:" + s);
+            #endif
+            </code>
+            </example>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RF.GlobalClass.Utils.IO.CreateNewFile(System.String,System.String,System.String,System.String)" -->
+        <member name="M:RF.GlobalClass.Utils.IO.AddNewLine(System.String,System.String,System.String)">
+            <summary>
+            Add a new line to file.
+            </summary>
+            <param name="sURI">the URI of the file to be modified.</param>
+            <param name="sNewLine">the new line string to be used by TextWriter.</param>
+            <param name="ifCompress">if need to compress the file.</param>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.ReadLines(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Read specific Lines from File.
+            </summary>
+            <param name="sURI">the URI of the File.</param>
+            <param name="sPattern">the pattern that the lines to match.</param>
+            <param name="sEncodingName">the Encoding Name of the file encoding.</param>
+            <param name="roRegexOptions">the RegexOptions which used in Regex.IsMatch</param>
+            <returns>the hashtable of the result, line number is the key and content of the line is value.</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.UpdateLines(System.String,System.Collections.Hashtable,System.String)">
+            <summary>
+            update lines in specific file.
+            </summary>
+            <param name="sURI">the URI of the file to be updated.</param>
+            <param name="hLinesToBeUpdated">the Hashtable of the lines, line number is the key and new content of the line is value.</param>
+            <param name="sEncodingName">the Encoding Name of the file encoding.</param>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.GetEmbeddedResourceNames(System.Reflection.Assembly)">
+            <summary>
+            Get the list of all embedded resources in the assembly.
+            </summary>
+            <param name="assembly">
+            The Assembly created from the <c>outside</c> of the NameSpace(or .dll) enables this method reach resources outside. Or method will use the GetCallingAssembly;
+                <para>e.g:
+                    <code>
+                        System.Reflection.Assembly.GetExecutingAssembly()
+                    </code>
+                </para>
+            </param>
+            <returns>An array of fully qualified resource names</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.GetEmbeddedResourceStream(System.String,System.String,System.Reflection.Assembly)">
+            <summary>
+            GetEmbeddedResourceStream
+            </summary>
+            <param name="nameSpace">name space of this project</param>
+            <param name="filePath">file path of the resource file.</param>
+            <param name="assembly">
+                The Assembly created from the <c>outside</c> of the NameSpace(or .dll) enables this method reach resources outside. Or method will use the GetCallingAssembly;
+                <para>e.g:
+                    <code>
+                        System.Reflection.Assembly.GetExecutingAssembly()
+                    </code>
+                </para>
+            </param>
+            <returns>System.IO.Stream</returns>
+            <example>
+                <code>
+                System.IO.Stream stream = GlobalClass.Utils.IO.GetResourceFileStream(nameSpace, filePath, System.Reflection.Assembly.GetExecutingAssembly());
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string result = reader.ReadToEnd();
+                }
+                </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.IO.GetEmbeddedResourceStream(System.String,System.Reflection.Assembly)">
+            <summary>
+            Takes the full name of a resource and loads it in to a stream.
+            
+            </summary>
+            <example>
+                <code>
+                System.IO.Stream stream = GlobalClass.Utils.IO.GetEmbeddedResourceStream(resourceName, System.Reflection.Assembly.GetExecutingAssembly());
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string result = reader.ReadToEnd();
+                }
+                </code>
+            </example>
+            <param name="resourceName">Assuming an embedded resource is a file
+            called info.png and is located in a folder called Resources, it
+            will be compiled in to the assembly with this fully qualified
+            name: Full.Assembly.Name.Resources.info.png. That is the string
+            that you should pass to this method.</param>
+            <param name="assembly">
+                The Assembly created from the <c>outside</c> of the NameSpace(or .dll) enables this method reach resources outside. Or method will use the GetCallingAssembly;
+                <para>e.g:
+                    <code>
+                        System.Reflection.Assembly.GetExecutingAssembly()
+                    </code>
+                </para>
+            </param>
+            <returns>System.IO.Stream</returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.DateTime">
+            <summary>
+            關於 日期時間 的類；the class of collections about DateTime.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DateTime.GetFirstDateOfMonth(System.DateTime,System.Int32)">
+            <summary>
+            Get the DateTime of the first day of the month.
+            </summary>
+            <param name="dateTime"></param>
+            <param name="monthOffSet">month offset of the dateTime</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DateTime.GetLastDateOfMonth(System.DateTime,System.Int32)">
+            <summary>
+            Get the DateTime of the last day of the month.
+                <para>
+                    <example>
+                        <code>
+                            this.dateTime = GlobalClass.Utils.DateTime.GetLastDateOfMonth(dateTime, Convert.ToInt32(GlobalClass.Utils.Convertion.EnumValueToString(monthOffSet))).AddDays(indexOfDisplay - numberOfVisibleDayInMonth);
+                        </code>
+                    </example>
+                </para>
+            </summary>
+            <param name="dateTime">dateTime</param>
+            <param name="monthOffSet">month offset of the dateTime</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DateTime.GetDateTimeString(System.DateTime,System.String,System.String)">
+            <summary>
+            获取日期时间字符串
+            </summary>
+            <param name="dateTime">日期时间对象</param>
+            <returns>日期时间字符串：2014-10-21 08:33</returns>
+            <example>
+                <para>
+                    <code>
+                        String dateTimeStr = GetDateTimeString(DateTime.Now);
+                    </code>
+                </para>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DateTime.GetDateString(System.DateTime,System.String,System.String,System.String)">
+            <summary>
+            获取日期字符串
+            </summary>
+            <param name="dateTime"></param>
+            <param name="culture"></param>
+            <param name="dateSeparator"></param>
+            <returns>日期时间字符串：2014-10-21</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DateTime.GetDateTimeInfo(System.String,System.String)">
+            <summary>
+            Get the DateTimeFormatInfo
+            </summary>
+            <param name="culture"></param>
+            <param name="dateSeparator"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.DateTime.FormatInfo">
+            <summary>
+            DateTime Format Info Constant value
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.FullDateTimePattern">
+            <summary>
+            "yyyy'年'M'月'd'日' H:mm:ss"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.LongDatePattern">
+            <summary>
+            "yyyy'年'M'月'd'日'"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.LongTimePattern">
+            <summary>
+            "H:mm:ss"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.YearMonthPattern">
+            <summary>
+            "yyyy'年'M'月'"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.MonthDayPattern">
+            <summary>
+            "M'月'd'日'"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.ShortDatePattern">
+            <summary>
+            "yyyy/M/d"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.ShortTimePattern">
+            <summary>
+            "H:mm"
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Utils.DateTime.FormatInfo.SortableDateTimePattern">
+            <summary>
+            "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.Utils.DB">
+            <summary>
+            DB 的摘要说明
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.#ctor">
+            <summary>
+            DataBase
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.GetCon(System.String)">
+            <summary>
+            连接数据库
+            </summary>
+            <param name="sqlConnectionStr">default null,if null, then the SqlConnectionStr of DB class instance will be used.</param>
+            <returns>返回SqlConnection对象</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.sqlEx(System.String)">
+             <summary>
+             执行SQL语句
+             </summary>
+            <param name="cmdstr">SQL语句</param>
+             <returns>返回值为int型：成功返1，失败返回0</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.reDs(System.String)">
+            <summary>
+            执行SQL查询语句
+            </summary>
+            <param name="cmdstr">查询语句</param>
+            <returns>返回DataTable数据表</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.reDt(System.String)">
+            <summary>
+            执行SQL查询语句
+            </summary>
+            <param name="cmdstr">查询语句</param>
+            <returns>返回DataTable数据表</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.reDr(System.String)">
+            <summary>
+            执行SQL查询语句
+            </summary>
+            <param name="str">查询语句</param>
+            <returns>返回SqlDataReader对象dr</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Utils.DB.MD5(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="strPwd">被加密的字符串</param>
+            <returns>返回加密后的字符串</returns>
+        </member>
+        <member name="P:RF.GlobalClass.Utils.DB.SqlConnectionStr">
+             <summary>
+             the string used by sql connection.
+             </summary>
+             <example>
+             Standard Security
+             Server=myServerAddress;Database=myDataBase;User Id=myUsername;
+             Password=myPassword;
+             	SQL Server 2000SQL Server 2005SQL Server 2008SQL Server 2012SQL Server 7.0
+             Trusted Connection
+             Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;
+             	SQL Server 2000SQL Server 2005SQL Server 2008SQL Server 2012SQL Server 7.0
+             Connection to a SQL Server instance
+            
+             The server/instance name syntax used in the server option is the same for all SQL Server connection strings.
+             Server=myServerName\myInstanceName;Database=myDataBase;User Id=myUsername;
+             Password=myPassword;
+             </example>
+        </member>
+        <member name="T:RF.GlobalClass.WebForm">
+            <summary>
+            for System.Windows.Forms
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.fillTableAccordingToData(System.Web.UI.WebControls.Table,System.Data.DataTable,System.Data.DataTable,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Fill Table According to data
+            <note type="note">
+            The table should has one template row with cells and controls already.
+            And the template row will be removed automatically.
+            The data should in the order of the table column.
+            </note>
+            </summary>
+            <param name="t">Table</param>
+            <param name="dt">DataBase</param>
+            <param name="templateRowIndex">templateRowIndex, default is 1</param>
+            <example>
+            	<code>
+            		&lt;asp:Table ID="TableScoreExchangeInfo" runat="server" CssClass="table borderTopCorner borderAround" CellPadding="0" CellSpacing="0" ForeColor="Black" BorderStyle="None"
+            		 BorderColor="White" BackColor="White" style="text-overflow:ellipsis;overflow:auto;" OnPreRender="TableScoreExchangeInfo_OnPreRender"&gt;
+            			&lt;asp:TableRow ID="TableRow32" runat="server" CssClass="tableOddRow" Height="27px"&gt;
+            				&lt;asp:TableCell ID="TableCell100" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="tableHeaderRow borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label63" runat="server" Text="积分卡" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell101" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="tableHeaderRow borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label64" runat="server" Text="兑换类型" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell102" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="tableHeaderRow borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label65" runat="server" Text="兑换积分" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell103" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="tableHeaderRow borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label66" runat="server" Text="兑换礼品" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell104" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="tableHeaderRow borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label67" runat="server" Text="重打印兑换单" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            			&lt;/asp:TableRow&gt;
+            			&lt;asp:TableRow ID="TableRow31" runat="server" CssClass="tableOddRow" Height="27px"&gt;
+            				&lt;asp:TableCell ID="TableCell69" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label34" runat="server" Text="" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell73" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label38" runat="server" Text="" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell74" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label39" runat="server" Text="" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell79" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label44" runat="server" Text="" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            				&lt;asp:TableCell ID="TableCell95" runat="server" ColumnSpan="1" HorizontalAlign="Center" CssClass="borderAround" BackColor="White"&gt;
+            					&lt;asp:Label ID="Label62" runat="server" Text="" CssClass="padding0px2px0px2px"&gt;&lt;/asp:Label&gt;
+            				&lt;/asp:TableCell&gt;
+            			&lt;/asp:TableRow&gt;
+            		&lt;/asp:Table&gt;
+            	</code>
+            	<code>
+            		RF.GlobalClass.WebForm.fillTableAccordingToData(TableScoreExchangeInfo, dataSet.Tables["ScoreData", "ScoreDetails"]);
+            	</code>
+            </example>
+        </member>
+        <member name="T:RF.GlobalClass.WebForm.ControlCollection">
+            <summary>
+            the collection of control
+            </summary>
+            <example>
+            <see cref="M:RF.GlobalClass.WinForm.ControlCollection.fillControl(System.String,System.String,System.Single,System.Single,System.String)"/>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.ControlCollection.#ctor(System.Web.UI.Control[])">
+            <summary>
+            the collection of control
+            </summary>
+            <param name="controls"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.ControlCollection.CloneControlObject(System.Web.UI.Control)">
+            <summary>
+            this method makes a copy of control as a clone function
+            <note>
+                properties not in the object will NOT be cloned.
+                LiberalControl is not supported
+            </note>
+            </summary>
+            <param name="o">control to clone from</param>
+            <returns>Object</returns>
+            <example title="Clone Control of Table Cells">
+                <code>
+                foreach (Control control in tempTableCellControls)
+                {
+                    tc.Controls.Add(RF.GlobalClass.WebForm.ControlCollection.CloneControl(control));
+                }
+                </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.ControlCollection.CloneControl(System.Web.UI.Control)">
+            <summary>
+            this method makes a copy of control as a clone function
+            <note>
+                properties not in the object will NOT be cloned.
+            </note>
+            </summary>
+            <param name="c">control to clone from</param>
+            <returns>Control</returns>
+            <example title="Clone Control of Table Cells">
+                <code>
+                foreach (Control control in tempTableCellControls)
+                {
+                    tc.Controls.Add(RF.GlobalClass.WebForm.ControlCollection.CloneControl(control));
+                }
+                </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.ControlCollection.fillCodeAsBarCodeToControl(System.String,System.Web.UI.Control,System.Int32,System.Int32)">
+            <summary>
+            fill the Barcode format code to control as child controls
+            </summary>
+            <param name="code">the code to convert</param>
+            <param name="o">the control to be filled</param>
+            <param name="height">the height of the child control</param>
+            <param name="width">the width of the child control</param>
+            <returns>control its self</returns>
+        </member>
+        <member name="P:RF.GlobalClass.WebForm.ControlCollection.Controls">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Excel.saveAs(OfficeOpenXml.ExcelPackage,System.Web.HttpResponse,System.String,System.String,System.String)">
+            <summary>
+            Resposne via OutputStream
+            </summary>
+            <param name="package"></param>
+            <param name="Response"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Excel.saveAs(NPOI.HSSF.UserModel.HSSFWorkbook,System.Web.HttpResponse,System.String,System.String,System.String)">
+            <summary>
+            Resposne via OutputStream
+            </summary>
+            <param name="package"></param>
+            <param name="Response"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Excel.saveAs(RF.GlobalClass.Excel,System.Web.HttpResponse,System.String,RF.GlobalClass.Excel.Suffix,System.String,System.String)">
+            <summary>
+            Resposne via OutputStream
+            </summary>
+            <param name="excel">GlobalClass.Excel instance</param>
+            <param name="Response"></param>
+            <param name="name"></param>
+            <param name="suffix">GlobalClass.Excel.suffix define the type of excel to output</param>
+            <param name="cookieKey"></param>
+            <param name="cookieValue"></param>
+            <example>
+            <code language="C#" title="save excel">
+            RF.GlobalClass.Excel excel = new RF.GlobalClass.Excel();
+            excel.createWorksheet(name: "LuckDrawData", headers: new string[] { "NO", "scoreCardCode", "scoreCardOwnerName", "scoreTimes", "Item" }, rowsData: result.data["TableItemList"], suffix:RF.GlobalClass.Excel.suffix.xls);
+            RF.GlobalClass.WebForm.Excel.saveAs(excel: excel, Response: Response, name: "LuckDrawData" + RF.GlobalClass.Utils.DateTime.GetDateTimeString(DateTime.Now), suffix: RF.GlobalClass.Excel.suffix.xls);
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Excel.binaryWrite(OfficeOpenXml.ExcelPackage,System.Web.HttpResponse,System.String,System.String,System.String)">
+            <summary>
+            Response via BinaryWrite
+            </summary>
+            <param name="package"></param>
+            <param name="Response"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Excel.storeToApplication(OfficeOpenXml.ExcelPackage,System.Web.HttpApplicationState,System.String)">
+            <summary>
+            Store ExcelPackage's Stream to Page.Application
+            </summary>
+            <param name="package"></param>
+            <param name="Application"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Excel.getFromApplication(System.Web.HttpApplicationState,System.String)">
+            <summary>
+            Get ExcelPackage's Stream from Page.Application
+            </summary>
+            <param name="Application"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.WebForm.Image">
+            <summary>
+            class for Image
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Image.GetImageSrcFromBinaryData(System.Byte[],System.String)">
+            <summary>
+            Get the src of image by passing bianryArray
+            </summary>
+            <param name="imageBytes"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Image.ImageToBinary(System.String)">
+            <summary>
+            Convert local image to binary array
+            </summary>
+            <param name="imagePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Image.GetThumbImage(System.Drawing.Image,System.Drawing.Imaging.ImageFormat,System.Int32,System.Int32,System.Func{System.Boolean},System.Web.HttpResponse,System.String)">
+            <summary>
+            Get thumbnail image
+            </summary>
+            <param name="image"></param>
+            <param name="imageFormat"></param>
+            <param name="thumbWidth"></param>
+            <param name="thumbHeight"></param>
+            <param name="ThumbnailCallback"></param>
+            <param name="Response"></param>
+            <param name="responseContentType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.WebForm.Image.GetCompactImageSrcForLowLevelBrowser(System.String,System.Double,System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Get Compact Image Src for Low Level Browser
+            </summary>
+            <param name="imgBase64Data"></param>
+            <param name="IEVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RF.GlobalClass.WebForm.Image.LimitSize">
+            <summary>
+            the Limit Size that the Browser Supported
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.Log">
+            <summary>
+            用於打印日誌；for recording the log.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Log.Underconstruction(System.String)">
+            <summary>
+            開發狀態下，用於在終端打印消息的方法；function for writing line in the console when the programme is underconstruction.
+            </summary>
+            <param name="sMessage">要輸出的消息；the message to print</param>
+            <returns>程序是否在開發狀態下；whether the programme is underconstruction</returns>
+            <example>
+            Boolean isUnderConstruction = GlobalClass.log.Underconstruction("Write Log Message Here.");
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Log.Monitor(System.String)">
+            <summary>
+            用於在終端打印消息以跟踪程序的方法；function for writing line in the console.
+            </summary>
+            <param name="sMessage">要輸出的消息；the message to print</param>
+            <returns>程序監控是否開啟；whether the monitoring is on</returns>
+            <example>
+            Boolean isMonitoring = GlobalClass.Log.Monitor("Write Log Message Here.");
+            </example>
+        </member>
+        <member name="T:RF.GlobalClass.DB">
+            <summary>
+            数据操作相关类
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.DB.createSelectSQL(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Create Select SQL
+            </summary>
+            <param name="tableName">the table Name</param>
+            <param name="columnNameValues">column name and value pair</param>
+            <param name="columnNameTypes">column name and type pair</param>
+            <param name="conditionTextValue">condition text value pair</param>
+            <param name="pageNum">the number of page, start from 1</param>
+            <param name="pageSize">the record size of per page</param>
+            <returns></returns>
+            <example >
+            <code language="SQL" title="Supposed to be">
+            SELECT * FROM [log] ORDER BY [id] OFFSET 10 ROWS FETCH NEXT 5 ROWS ONLY;
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.DB.createInsertSQL(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Create Insert SQL
+            </summary>
+            <param name="tableName">Table Name</param>
+            <param name="columnNameValues">column name and value pair</param>
+            <param name="columnNameTypes">column name and type pair</param>
+            <returns>Insert SQL</returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.createUpdateSQL(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Create Update SQL
+            </summary>
+            <param name="tableName">the table Name</param>
+            <param name="columnNameValues">column name and value pair</param>
+            <param name="columnNameTypes">column name and type pair</param>
+            <param name="conditionTextValue">condition text value pair</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.getQuoteSymbol(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Set the QuoteSymbol value according to the column type
+            </summary>
+            <param name="type">the type to identify</param>
+            <param name="columnNameTypes">to get the type if type not filled</param>
+            <param name="kvpss">to get the type if type not filled</param>
+            <returns></returns>
+            <example>
+             quoteSymbol = getQuoteSymbol(columnNameTypes: columnNameTypes, kvpss:kvpss);
+            </example>
+        </member>
+        <member name="T:RF.GlobalClass.DB.ConnLocalDB">
+            <summary>
+            用于连接本地数据库文件
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.#ctor(System.String)">
+            <summary>
+            带参数的构造函数
+            </summary>
+            <param name="newConnectionString"> 数据库联接字符串 </param>
+            <example>
+            <code language="C#" title="init ConnLocalDB">
+            #region interact with local database via SQL Script
+            RF.GlobalClass.DB.ConnLocalDB cldb = new RF.GlobalClass.DB.ConnLocalDB(global::WindowsFormsApplication4sdtapi.Properties.Settings.Default.ClientScenicTicketSaleSystemConnectionString + @"Password=""7654321"";");
+            DataSet ds = cldb.ReturnDataSet(
+                @"INSERT INTO [Order]
+                   ([D_ORDER_ID]
+                   ,[PRO_ID]
+                   ,[SALE_PRICE]
+                   ,[SALE_UNIT_PRICE]
+                   ,[STATUS]
+                   ,[TICKET_COUNT]
+                   ,[USE_TIME])
+                VALUES
+                   (N'" + order.id + @"'
+                   ,N'" + order.product.id + @"'
+                   ," + order.amount + @"
+                   ," + order.product.price + @"
+                   ,N'" + order.status + @"'
+                   ," + order.ticketCount + @"
+                   ,N'" + order.visitDate + @"'
+                    );"
+            );
+            ds = cldb.ReturnDataSet(@"
+                    SELECT ID FROM [Order]
+                        WHERE [D_ORDER_ID] = N'" + order.id + @"'
+                           AND [USE_TIME] = N'" + order.visitDate + @"'
+                    "
+            );
+            String OrderInnerID = "";
+            if (ds.Tables.Count > 0)
+            {
+                OrderInnerID = Convert.ToString(ds.Tables[0].Rows[0][0]);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.BuildCommand(System.String,System.Data.IDataParameter[])">
+            <summary>
+            完成 SqlCommand 对象的实例化
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.BuildQueryCommand(System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建新的 SQL 命令对象 ( 存储过程)
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.ExecuteProcedure(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行存储过程 , 无返回值
+            [NOTICE] Actually the .sdf do not contain any stored procedure of functions.
+            </summary>
+            <param name="storedProcName">the name of the stored procdure;存儲過程的名稱；</param>
+            <param name="parameters">the instance of IDataParameter array;</param>
+            <example>
+            <code language="C#" title="Call ExceuteProcedure">
+            RF.GlobalClass.DB.ConnLocalDB cldb = new RF.GlobalClass.DB.ConnLocalDB(global::WindowsFormsApplication4sdtapi.Properties.Settings.Default.ClientScenicTicketSaleSystemConnectionString + @"Password=""7654321"";");
+            #region procedure is not available in local database file
+            cldb.ExecuteProcedure("Create_ScenicTicketOrder", new System.Data.IDataParameter[] {
+                                new System.Data.SqlClient.SqlParameter("@ORDER_D_ORDER_ID",order.id)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_PRO_ID",order.product.id)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_SALE_PRICE",order.amount)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_SALE_UNIT_PRICE",order.product.price)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_STATUS",Dict.translate("ORDER_STATUS",order.status))
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_TICKET_COUNT",dbType:System.Data.SqlDbType.Int,size:order.ticketCount.Length,direction:System.Data.ParameterDirection.Input,isNullable:false,precision:0,scale:0,sourceColumn:"TICKET_COUNT",sourceVersion:System.Data.DataRowVersion.Current,value:order.ticketCount)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_USE_TIME",order.visitDate)
+                                ,new System.Data.SqlClient.SqlParameter("@PERSONS",personsInfoStr)
+               });
+            #endregion
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@)">
+            <summary>
+            执行存储过程，返回执行操作影响的行数目
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <param name="rowsAffected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.RunProcedure(System.String,System.Data.IDataParameter[])">
+            <summary>
+            重载 RunProcedure 把执行存储过程的结果放在 SqlDataReader 中
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.RunProcedure(System.String,System.Data.IDataParameter[],System.String[])">
+            <summary>
+            重载 RunProcedure 把执行存储过程的结果存储在 DataSet 中和表 tableName 为可选参数
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.ReturnDataSet(System.String,System.String)">
+            <summary>
+            执行 SQL 语句，返回数据到 DataSet 中
+            </summary>
+            <param name="sql"></param>
+            <param name="tableName">table,table1,table2...</param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.ReturnDataReader(System.String)">
+            <summary>
+            执行 SQL 语句，返回 DataReader
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.ReturnRecordCount(System.String)">
+            <summary>
+            执行 SQL 语句，返回记录数
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.EditDatabase(System.String)">
+            <summary>
+            执行 SQL 语句
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnLocalDB.Close">
+            <summary>
+            关闭数据库联接
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.DB.ConnDB">
+            <summary>
+            用于连接本机服务器localhost
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.#ctor(System.String)">
+            <summary>
+            带参数的构造函数
+            </summary>
+            <param name="newConnectionString"> 数据库联接字符串 </param>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.BuildCommand(System.String,System.Data.IDataParameter[])">
+            <summary>
+            完成 SqlCommand 对象的实例化
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.BuildQueryCommand(System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建新的 SQL 命令对象 ( 存储过程)
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.ExecuteProcedure(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行存储过程 , 无返回值
+            </summary>
+            <param name="storedProcName">the name of the stored procdure;存儲過程的名稱；</param>
+            <param name="parameters">the instance of IDataParameter array;</param>
+            <example>
+            <code language="C#" title="Call ExceuteProcedure">
+            RF.GlobalClass.DB.ConnDB cdb = new RF.GlobalClass.DB.ConnDB(global::WindowsFormsApplication4sdtapi.Properties.Settings.Default.ClientScenicTicketSaleSystemConnectionString + @"Password=""7654321"";");
+            #region procedure is not available in local database file
+            cdb.ExecuteProcedure("Create_ScenicTicketOrder", new System.Data.IDataParameter[] {
+                                new System.Data.SqlClient.SqlParameter("@ORDER_D_ORDER_ID",order.id)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_PRO_ID",order.product.id)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_SALE_PRICE",order.amount)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_SALE_UNIT_PRICE",order.product.price)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_STATUS",Dict.translate("ORDER_STATUS",order.status))
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_TICKET_COUNT",dbType:System.Data.SqlDbType.Int,size:order.ticketCount.Length,direction:System.Data.ParameterDirection.Input,isNullable:false,precision:0,scale:0,sourceColumn:"TICKET_COUNT",sourceVersion:System.Data.DataRowVersion.Current,value:order.ticketCount)
+                                ,new System.Data.SqlClient.SqlParameter("@ORDER_USE_TIME",order.visitDate)
+                                ,new System.Data.SqlClient.SqlParameter("@PERSONS",personsInfoStr)
+               });
+            #endregion
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@)">
+            <summary>
+            执行存储过程，返回执行操作影响的行数目
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <param name="rowsAffected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.RunProcedure(System.String,System.Data.IDataParameter[])">
+            <summary>
+            重载 RunProcedure 把执行存储过程的结果放在 SqlDataReader 中
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.RunProcedure(System.String,System.Data.IDataParameter[],System.String[])">
+            <summary>
+            重载 RunProcedure 把执行存储过程的结果存储在 DataSet 中和表 tableName 为可选参数
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.ReturnDataSet(System.String,System.String)">
+            <summary>
+            执行 SQL 语句，返回数据到 DataSet 中
+            </summary>
+            <param name="sql"></param>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.ReturnDataReader(System.String)">
+            <summary>
+            执行 SQL 语句，返回 DataReader
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.ReturnRecordCount(System.String)">
+            <summary>
+            执行 SQL 语句，返回记录数
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.EditDatabase(System.String)">
+            <summary>
+            执行 SQL 语句
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.DB.ConnDB.Close">
+            <summary>
+            关闭数据库联接
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm">
+            <summary>
+            for System.Windows.Forms
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm.ControlCollection">
+            <summary>
+            the collection of control
+            </summary>
+            <example>
+            <see cref="M:RF.GlobalClass.WinForm.ControlCollection.fillControl(System.String,System.String,System.Single,System.Single,System.String)"/>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.#ctor(System.Windows.Forms.Control[])">
+            <summary>
+            the collection of control
+            </summary>
+            <param name="controls"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.fillControl(System.Windows.Forms.Control,System.String,System.Single,System.Single,System.String)">
+            <summary>
+            fill text to control
+            </summary>
+            <param name="control">the Control ,which is stored in the ControlCollection, to fill to.</param>
+            <param name="text">the text content to fill</param>
+            <param name="minWidth">the minimum width of the font</param>
+            <param name="maxWidth">the maximum width of the font</param>
+            <param name="fontFamily">font size</param>
+            <returns>font size</returns>
+            <example>
+            <see cref="M:RF.GlobalClass.WinForm.ControlCollection.fillControl(System.String,System.String,System.Single,System.Single,System.String)"/>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.fillControl(System.String,System.String,System.Single,System.Single,System.String)">
+            <summary>
+            fill text to control
+            </summary>
+            <param name="controlName">the name of the Control ,which is stored in the ControlCollection, to fill to.</param>
+            <param name="text">the text content to fill</param>
+            <param name="minWidth">the minimum width of the font</param>
+            <param name="maxWidth">the maximum width of the font</param>
+            <param name="fontFamily">font size</param>
+            <returns>font size</returns>
+            <example>
+            <code language="C#" title="Fill the TextBox">
+            RF.GlobalClass.WinForm.ControlCollection wfcc;
+            wfcc = new RF.GlobalClass.WinForm.ControlCollection(new Control[] { textBoxKeywords });
+            String mesg = "Hello Text World";
+            wfcc.fillControl("textBoxKeywords", mesg);
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.adjustFontSize(System.Single)">
+            <summary>
+            adjust the Font Size of all the control with the specified font size value.
+            </summary>
+            <param name="fontSize"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.adjustFontSize">
+            <summary>
+            adjust the Font Size of all the control with font size min value.
+            </summary>
+            <example>
+            <code language="C#" title="adjust font size of the whole collection of control">
+            private void displayProductOption()
+            {
+            	Product product;
+            	Button btn;
+            	PictureBox pb;
+            	float fontSize = 23;
+            	List&lt;Control&gt; controls = new List&lt;Control&gt;();
+            	for(int i = 0; i&lt; pageSize; i++){
+            		product = productCollection.Get(pageNum * pageSize + i);
+            		btn = this.Controls["ButtonOption" + (i + 1)] as Button;
+            		btn.Text = (product ?? new Product()).name;
+            		btn.Enabled = (btn.Text != "");
+            		pb = this.Controls["pictureBoxProductOption" + (i + 1)] as PictureBox;
+            		pb.Text = (product ?? new Product()).name;
+            		pb.Padding = new System.Windows.Forms.Padding(10, 20, 20, 10);
+            		pb.Enabled = ((pb as Control).Text != "");
+            		fontSize = (btn.Text.Length &gt; 9 ? 9 * 23 / btn.Text.Length : 23);
+            		fontSize = fontSize &lt; 11 ? 11 : fontSize;
+            		btn.Font = new Font(new FontFamily("宋体"), fontSize);
+            		pb.Font = new Font(new FontFamily("宋体"), fontSize);
+            		unselectOptionButton(btn);
+            		//unselectOptionButton(pb);
+            		controls.Add(pb);
+            	}
+            	RF.GlobalClass.WinForm.ControlCollection hqControls 
+            		= new RF.GlobalClass.WinForm.ControlCollection(controls.ToArray());
+            	hqControls.adjustFontSize();
+            	for (int i = 0; i &lt; pageSize; i++)
+            	{
+            		hqControls.Controls.Select(delegate(System.Windows.Forms.Control _control)
+            		{
+            			Control result = null;
+            			unselectOptionButton(_control as PictureBox);
+            			return result;
+            		}).ToArray();
+            	}
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.reloadFontSizeMax">
+            <summary>
+            reload max font size
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.reloadFontSizeMin">
+            <summary>
+            reload min font size
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.reloadFontSize">
+            <summary>
+            reload both max and min font size
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.ControlCollection.inputToTextBoxOneByOne(System.Windows.Forms.TextBox,System.String)">
+            <summary>
+            input text to the text field, support to replace the selected text.
+            </summary>
+            <param name="currTextBox"></param>
+            <param name="value">0,1,2,3,4,5,6,7,8,9,0,Backspace,Clear</param>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.ControlCollection.MaxFontSize">
+            <summary>
+            Gets or Sets the max limitation of the font size;
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.ControlCollection.MinFontSize">
+            <summary>
+            Gets or Sets the min limitation of the font size
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.ControlCollection.Controls">
+            <summary>
+            contain all the controls.
+            </summary>
+            <example>
+            <code language="C#" title="Init ControlCollection And Fill Text">
+            // init product detail info
+            RF.GlobalClass.WinForm.ControlCollection hqlabels = new RF.GlobalClass.WinForm.ControlCollection(new Control[] {
+                labelName,
+                labelMaxPreSaleTime,
+                labelMinPreSaleTime,
+                labelOpenTime,
+                labelCloseTime,
+                labelEffectiveType,
+                labelEffectiveDayNum,
+                labelEntryType,
+                labelUseCount,
+                labelBuyLimitation,
+                labelVisitorType,
+                labelPrice
+            });
+            // 迭代，赋值。
+            hqlabels.fillControl(labelName, product.name,
+            maxWidth: hqlabels.fillControl(labelMaxPreSaleTime, Dict.translate("dayNum", product.maxPreSaleTime),
+            maxWidth: hqlabels.fillControl(labelMinPreSaleTime, Dict.translate("dayNum", product.minPreSaleTime),
+            maxWidth: hqlabels.fillControl(labelOpenTime, product.openTime,
+            maxWidth: hqlabels.fillControl(labelCloseTime, product.closeTime,
+            maxWidth: hqlabels.fillControl(labelEffectiveType, product.effectiveType,
+            maxWidth: hqlabels.fillControl(labelEffectiveDayNum, Dict.translate("dayNum", product.effectiveDayNum),
+            maxWidth: hqlabels.fillControl(labelEntryType, product.entryType,
+            maxWidth: hqlabels.fillControl(labelUseCount, Dict.translate("useCount", product.useCount),
+            maxWidth: hqlabels.fillControl(labelBuyLimitation, Dict.translate("ticketPurchaseLimitationType", (Dict.translateBack("VISITOR_TYPE", product.visitorType))) + Dict.translate("ticketNum", product.buyLimitation),
+            maxWidth: hqlabels.fillControl(labelVisitorType, product.visitorType,
+            maxWidth: hqlabels.fillControl(labelPrice, Dict.translate("price", product.price), minWidth: 11
+            ))))))))))));
+            hqlabels.adjustFontSize();
+            </code>
+            </example>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.ControlCollection.FontSizeMax">
+            <summary>
+            the max size of font dedicate from all the control
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.ControlCollection.FontSizeMin">
+            <summary>
+            the min size of font dedicate from all the control
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm.Message">
+            <summary>
+            Message 消息
+            </summary>
+            <example>
+            <see cref="M:RF.GlobalClass.WinForm.Message.Show(System.Windows.Forms.Control,System.Windows.Forms.Label,System.Windows.Forms.Panel,System.String,System.Int32,System.Int32,System.Int32,System.Single,System.Single)"/>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Message.Show(System.Windows.Forms.Control,System.Windows.Forms.Label,System.Windows.Forms.Panel,System.String,System.Int32,System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Show Message, need message panel with message label inside, and a timer.
+            </summary>
+            <param name="formControl">the form to hold the panelDisplay 消息展示Panel所屬的Form</param>
+            <param name="labelMessage">the message label instance in the form.用於展示消息的Label，內嵌於Panel中。</param>
+            <param name="panelDisplay">the panel to display the message in the form 用於展示消息的Panel</param>
+            <param name="text">the message to display 需要展示的消息</param>
+            <param name="delayShowTime">the time to delay before the message to show 延時展示的時間長度</param>
+            <param name="showTime">how long the message is shown.(use default setting is recommended) 消息展示的時間長度（建議不提供由系統智能設置）
+            <para>-1:smartMode 智能设置, 0: show forever 保持显示</para></param>
+            <param name="intervalTime">[NOTICE]temporarily not supported 暫時不支持</param>
+            <param name="minFontWidth">the minimum width of the font to show.消息字體最小寬度</param>
+            <param name="maxFontWidth">the maximum width of the font to show.消息字體最大寬度</param>
+            <returns>messageShowResult contains {"panelDisplay":System.Windows.Forms.Panel
+            ,"labelMessage":System.Windows.Forms.Label
+            , this.ThreadShowName: WinForm.Thread
+            , this.ThreadHideName:WinForm.Thread}</returns>
+            <example>
+            <code language="C#" title="Show Message ">
+            RF.GlobalClass.WinForm.Message hqwfMessage = new RF.GlobalClass.WinForm.Message();
+            hqwfMessage.Show(labelMessage: labelMessage, panelDisplay: panelMessage
+            , text:Dict.translate("MESSAGE", "Please choose the date to visit"));
+            </code>
+            <code language="C#" title="Deal with the mesage show result">
+            hqwfMessage.LabelMessage = labelMessage;
+            hqwfMessage.PanelDisplay = panelMessage;
+            Dictionary&lt;string,object&gt; messageShowResult = hqwfMessage.Show(labelMessage: labelMessage, panelDisplay: panelMessage
+            , text: Dict.translate("MESSAGE", "loading") + Dict.translate("PUNCTUATION","..."), delayShowTime: 0, showTime:0);
+            RF.GlobalClass.WinForm.Thread hqwfThread = new RF.GlobalClass.WinForm.Thread(threadName: "QueryScenics"
+            , workerFunc: (RF.GlobalClass.WinForm.Thread.workerFunctionDelegate)delegate()
+            {
+                QueryScenics();
+                try
+                {
+                    if(hqwfMessage.ThreadHide == (RF.GlobalClass.WinForm.Thread)messageShowResult[hqwfMessage.ThreadHideName])){
+                        ((RF.GlobalClass.WinForm.Thread)messageShowResult[hqwfMessage.ThreadHideName]).WorkerThread.Abort();
+                    }else{/*will not be accessed.*/}
+                }
+                catch (NullReferenceException nre)
+                {
+                    // There will be an NullReferenceException, only because the hqwfMessage's showTime is zero
+                    // , which means there will not be a thread for hiding the display panel.
+                }
+                panelMessage.Hide();
+            }, formControl: this, delayExecuteTime:700, sleepTime:10);
+            hqwfThread.Start();
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Message.Hide">
+            <summary>
+            Hide Message;
+            If the display panel has not been shown, it will still be shown latter.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Message.Close">
+            <summary>
+            Close Message
+            If the display panel has not been shown, it will not be shown.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Message.GetShowTime(System.String)">
+            <summary>
+            Compute the time to show message base on the length of the text.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.ShowTime">
+            <summary>
+            the time to show message.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.LabelMessage">
+            <summary>
+            the label to show message
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.PanelDisplay">
+            <summary>
+            the panel to display message label
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.Visible">
+            <summary>
+            get or set the visibility value of the Message.
+            獲取 或 設置 Message的可見性的值。（注意，並不直接影響其可見性，但visible改變時，可以及時結束相關等待線程。）
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.DelayShowTime">
+            <summary>
+            the time to delay the show
+            用於控制延遲展示的時間
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.ThreadHideName">
+            <summary>
+            the name of the thread used to hide the display panel
+            用於隱藏展示消息的Panel的線程
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Message.ThreadShowName">
+            <summary>
+            the name of the thread used to show the display panel
+            用於顯示展示消息的Panel的線程
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm.Thread">
+            <summary>
+            Multi Thread for WinForm 為WinForm程序提供的多線程封裝
+            </summary>
+            <example>
+            <see cref="M:RF.GlobalClass.WinForm.Thread.#ctor(System.String,System.Delegate,System.Windows.Forms.Control,System.Int32,System.Int32)"/>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Thread.#ctor">
+            <summary>
+            Multi Thread for WinForm
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Thread.#ctor(System.String,System.Delegate,System.Windows.Forms.Control,System.Int32,System.Int32)">
+            <summary>
+            Multi Thread for WinForm
+            </summary>
+            <param name="threadName">the name of the Thread</param>
+            <param name="workerFunc">the method to be invoke by the FromControl, an instance of workerFunctionDelegate</param>
+            <param name="formControl">the form instance to invoke the method</param>
+            <param name="delayExecuteTime">time to delay before execute the workerFunc</param>
+            <param name="sleepTime"><see cref="P:RF.GlobalClass.WinForm.Thread.SleepTime"/></param>
+            <example>
+            <code language="C#" title="Start a thread">
+                WinForm.Thread.workerFunctionDelegate wfd;
+                WinForm.Thread wft;
+                int sleepTime = 100;
+                wfd = delegate()
+                   {
+                       if (panelDisplay.Visible == true)
+                       {
+                           showTime = (-1 != showTime ? showTime : (labelMessage.Text.Length / 3 + 1) * (1000));
+                           for (int i = 0; i &lt;  (showTime / sleepTime); i++)
+                           {
+                               System.Windows.Forms.Application.DoEvents();
+                               System.Threading.Thread.Sleep((sleepTime));
+                               if (!this.Visible)
+                               {
+                                   break;
+                               }
+                           }
+                           panelDisplay.Hide();
+                       }
+                       else
+                       {
+                           // do nothing
+                       }
+                   };
+                wft = new Thread(workerFunc: wfd, formControl: panelDisplay.FindForm(), sleepTime: showTime);
+                wft.Start();
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Thread.Start">
+            <summary>
+            Start the Thread
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.WorkerThread">
+            <summary>
+            the new Thread
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.FormControl">
+            <summary>
+            the WinForm instance
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.WorkerFunc">
+            <summary>
+            the method that FormControl will invoke.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.Name">
+            <summary>
+            the name of the Thread
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.SleepTime">
+            <summary>
+            the time to sleep before FormControl to invoke the method.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.DelayExecuteTime">
+            <summary>
+            time to delay before execute the workerFunc
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm.Thread.workerFunctionDelegate">
+            <summary>
+            the delegate for the method to be invoke by the FormControl.
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm.Thread.Worker">
+            <summary>
+            the Worker Class for the Thread
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Thread.Worker.OnProgressChanged(RF.GlobalClass.WinForm.Thread.Worker.ProgressChangedArgs)">
+            <summary>
+            the on progress changed method to be invoked on worker StartWork
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Thread.Worker.StartWork">
+            <summary>
+            start to work
+            </summary>
+        </member>
+        <member name="E:RF.GlobalClass.WinForm.Thread.Worker.ProgressChanged">
+            <summary>
+            Event to be trigged on progress changed
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.Worker.DelayExecuteTime">
+            <summary>
+            time to delay before execute the workerFunc
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.WinForm.Thread.Worker.ProgressChangedArgs">
+            <summary>
+            the eventArgs class for progressChanged
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.WinForm.Thread.Worker.ProgressChangedArgs.#ctor(System.String)">
+            <summary>
+            the ProgressChangeArgs
+            </summary>
+            <param name="progress"></param>
+        </member>
+        <member name="P:RF.GlobalClass.WinForm.Thread.Worker.ProgressChangedArgs.Progress">
+            <summary>
+            record if the progress is changed
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.#ctor(System.IO.FileInfo)">
+            <summary>
+            init Excel by passing fileInfo
+            </summary>
+            <param name="fileInfo"></param>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.createWorksheet(System.String,System.String[],System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},RF.GlobalClass.Excel.Suffix)">
+            <summary>
+            Creat Worksheet of Excel for Table Data
+            </summary>
+            <param name="name">the name of the worksheet</param>
+            <param name="worksheetTemplate">the .xlsx support template</param>
+            <param name="headers">the header of the table to be shown in excel</param>
+            <param name="rowsData">the data of the table</param>
+            <param name="suffix">the suffix of the excel, which is used to define the type of the excel.</param>
+            <returns>rf.OfficeOpenXml.ExcelWorksheet/rf.NPOI.SS.UserModel.ISheet/null</returns>
+            <example>
+            <code language="C#" title="create .xlsx excel">
+            RF.GlobalClass.Excel excel = new RF.GlobalClass.Excel();
+            excel.createWorksheet(name: "LuckDrawData", headers: new string[] { "NO", "scoreCardCode", "scoreCardOwnerName", "scoreTimes", "Item" }, rowsData: result.data["TableItemList"], suffix:RF.GlobalClass.Excel.suffix.xlsx);
+            RF.GlobalClass.WebForm.Excel.saveAs(excel: excel, Response: Response, name: "LuckDrawData" + RF.GlobalClass.Utils.DateTime.GetDateTimeString(DateTime.Now), suffix: RF.GlobalClass.Excel.suffix.xlsx);
+            </code>
+            </example>
+            <example>
+            <code language="C#" title="create .xls excel"> 
+            RF.GlobalClass.Excel excel = new RF.GlobalClass.Excel();
+            excel.createWorksheet(name: "LuckDrawData", headers: new string[] { "NO", "scoreCardCode", "scoreCardOwnerName", "scoreTimes", "Item" }, rowsData: result.data["TableItemList"], suffix:RF.GlobalClass.Excel.suffix.xls);
+            RF.GlobalClass.WebForm.Excel.saveAs(excel: excel, Response: Response, name: "LuckDrawData" + RF.GlobalClass.Utils.DateTime.GetDateTimeString(DateTime.Now), suffix: RF.GlobalClass.Excel.suffix.xls);
+            </code>
+            </example>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.createWorksheet(System.String,OfficeOpenXml.ExcelWorksheet,System.String[],System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            Creat Worksheet of Excel for Table Data
+            </summary>
+            <param name="name">the name of the worksheet</param>
+            <param name="worksheetTemplate">the .xlsx support template</param>
+            <param name="headers">the header of the table to be shown in excel</param>
+            <param name="rowsData">the data of the table</param>
+            <returns>rf.OfficeOpenXml.ExcelWorksheet</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.fillWorksheet(OfficeOpenXml.ExcelWorksheet,System.String[],System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            Fill Worksheet of .xlsx excel with data
+            </summary>
+            <param name="worksheet">the worksheet to be filled</param>
+            <param name="headers">the headers to fill</param>
+            <param name="rowsData">the row data to fill</param>
+            <returns>rf.OfficeOpenXml.ExcelWorksheet</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.fillWorksheet(OfficeOpenXml.ExcelWorksheet,System.String[],System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            Fill Worksheet of .xlsx excel with data
+            </summary>
+            <param name="worksheet">the worksheet to be filled</param>
+            <param name="headers">the headers to fill</param>
+            <param name="rowsData">the row data to fill</param>
+            <returns>rf.OfficeOpenXml.ExcelWorksheet</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.fillWorksheet(NPOI.SS.UserModel.ISheet,System.String[],System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            Fill sheet of .xls excel with data
+            </summary>
+            <param name="sheet">the work sheet to be filled</param>
+            <param name="headers">the headers to fill</param>
+            <param name="rowsData">the row data to fill</param>
+            <returns>rf.NPOI.SS.UserModel.ISheet</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.setWorkbookProperties(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},RF.GlobalClass.Excel.Suffix)">
+            <summary>
+            Set the properties of the workbook
+            </summary>
+            <param name="title">the title of the workbook</param>
+            <param name="author">the author of the workbook</param>
+            <param name="comments">the comments of the workbook</param>
+            <param name="company">the company of the workbook</param>
+            <param name="customProperties">the custom properties</param>
+            <param name="suffix">program will auto get the suffix of the excel. Usually you do NOT have to specify it. </param>
+            <returns>rf.NPOI.HSSF.UserModel.HSSFWorkbook/rf.OfficeOpenXml.ExcelWorkbook</returns>
+        </member>
+        <member name="M:RF.GlobalClass.Excel.AddComment(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            <seealso cref="!:http://zeeshanumardotnet.blogspot.com/2011/06/creating-reports-in-excel-2007-using.html"/>
+            </summary>
+            <param name="ws"></param>
+            <param name="colIndex"></param>
+            <param name="rowIndex"></param>
+            <param name="comment"></param>
+            <param name="author"></param>
+        </member>
+        <member name="T:RF.GlobalClass.Excel.Suffix">
+            <summary>
+            the result state of the method ValidateXMLWidthXSDResult
+            </summary>
+            <value>Failed</value>
+        </member>
+        <member name="F:RF.GlobalClass.Excel.Suffix.xls">
+            <summary>
+            Failed to pass the validation.
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Excel.Suffix.xlsx">
+            <summary>
+            Passed the validation.
+            </summary>
+        </member>
+        <member name="T:RF.GlobalClass.Config">
+            <summary>
+            用於記錄配置；for recording the configure.
+            </summary>
+        </member>
+        <member name="F:RF.GlobalClass.Config._monitoring">
+            <summary>
+            記錄當前是否啟用程序監控；Record whether to monitor the programme.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.BaseDir">
+            <summary>
+            程序的基礎目錄文件夾地址；the base directory of the programme.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.LogDir">
+            <summary>
+            程序的日誌文件夾地址；the log directory of the programme.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.MonitoringLogFileName">
+            <summary>
+            用於記錄監視日誌的日誌文件的名稱；the name of the file that store monitoring log.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.UnderconstructionLogFileName">
+            <summary>
+            用於記錄程序開發狀態下的日誌文件的名稱；the name of the file hold log when programme is underconstruction.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.MonitoringLogPath">
+            <summary>
+            監視日誌路徑；the path of monitoring log.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.UnderconstructionLogPath">
+            <summary>
+            開發日誌路徑；the path of underconstruction log.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.IsUnderconstruction">
+            <summary>
+            記錄當前是否是在開發狀態；Record the status of the programme, if it is underconstruction or not.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.LetUnderconstructionBe">
+            <summary>
+            設置當前是否是在開發狀態；Setting the status of the programme, if it is underconstruction or not.
+            </summary>
+            <permission cref="P:RF.GlobalClass.Config.IsUnderconstruction">this is protected and internal.</permission>
+        </member>
+        <member name="P:RF.GlobalClass.Config.IsMonitoring">
+            <summary>
+            記錄當前是否啟用程序監控；Record whether to monitor the programme.
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.Config.LetMonitoringBe">
+            <summary>
+            設置當前是否啟用程序監控；Setting whether needs to monitor the programme. 
+            </summary>
+            <permission cref="P:RF.GlobalClass.Config.IsMonitoring">this is protected and internal.</permission>
+        </member>
+        <member name="T:RF.GlobalClass.RegistryAccess">
+            <summary>
+            Summary description for clsRegistry.
+            </summary>
+        </member>
+        <member name="M:RF.GlobalClass.RegistryAccess.GetRegistryKeyForSure(Microsoft.Win32.RegistryKey,System.Collections.Generic.List{System.String})">
+            <summary>
+            Get Registry Key For Sure
+            </summary>
+            <param name="rootRegistryKey"></param>
+            <param name="keyNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.RegistryAccess.GetRegisteryKey(Microsoft.Win32.RegistryKey,System.Collections.Generic.List{System.String})">
+            <summary>
+            Get Registry Key
+            </summary>
+            <param name="rootRegistryKey"></param>
+            <param name="keyNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.RegistryAccess.GetStringRegistryValueForSure(System.String,System.String,Microsoft.Win32.RegistryKey,System.Collections.Generic.List{System.String})">
+            <summary>
+            Method for retrieving a Registry Value.
+            </summary>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <param name="rootRegistryKey"></param>
+            <param name="keyNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.RegistryAccess.GetStringRegistryValue(System.String,System.String,Microsoft.Win32.RegistryKey,System.Collections.Generic.List{System.String})">
+            <summary>
+            Method for retrieving a Registry Value.
+            </summary>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <param name="rootRegistryKey"></param>
+            <param name="keyNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RF.GlobalClass.RegistryAccess.SetStringRegistryValue(System.String,System.String,Microsoft.Win32.RegistryKey,System.Collections.Generic.List{System.String})">
+            <summary>
+            Method for storing a Registry Value.
+            </summary>
+            <param name="key"></param>
+            <param name="stringValue"></param>
+            <param name="rootRegistryKey"></param>
+            <param name="keyNames"></param>
+        </member>
+        <member name="P:RF.GlobalClass.RegistryAccess.SoftwareKey">
+            <summary>
+            Software level key name
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.RegistryAccess.CompanyName">
+            <summary>
+            company level key name
+            </summary>
+        </member>
+        <member name="P:RF.GlobalClass.RegistryAccess.ApplicationName">
+            <summary>
+            application level key name
+            </summary>
+        </member>
+        <member name="T:RF.ResourceImage">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:RF.ResourceImage.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:RF.ResourceImage.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:RF.ResourceImage.messageBox">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,23 @@
+﻿body {
+}
+.panelTitle
+{
+    background: -ms-linear-gradient(#e8e8e8 0%, #f8f8f8 20%, #ffffff 100%);
+    background: -moz-linear-gradient(top, #e8e8e8 0%, #f8f8f8 20%, #fff 100%);
+    border-width: 0.5px 0px 0px 0px;
+    /*border-left: steelblue 4px solid;*/
+}
+.textAlignJustify
+{
+    text-align:justify;
+    text-justify:distribute-all-lines;
+}
+.justifyPunctuation
+{
+    text-justify-trim:punctuation;
+}
+.select-skinned-cont
+{
+    height:28px;
+    line-height:28px;
+}
